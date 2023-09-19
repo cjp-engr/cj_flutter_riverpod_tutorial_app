@@ -1,3 +1,4 @@
+import 'package:cj_flutter_riverpod_tutorial_app/common/utils/app_styles.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/features/welcome/welcome.dart';
 import 'package:flutter/material.dart';
 
@@ -13,11 +14,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const WelcomePage(),
+      // theme: ThemeData(
+      //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      //   useMaterial3: true,
+      // ),
+      theme: AppTheme.appThemeData,
+      home: WelcomePage(),
     );
   }
 }
