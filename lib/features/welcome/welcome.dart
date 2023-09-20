@@ -1,12 +1,19 @@
-import 'package:cj_flutter_riverpod_tutorial_app/common/utils/image_res.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/features/welcome/view/widgets/buttons.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/features/welcome/view/widgets/welcome_widgets.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/features/welcome/view/widgets/dots_indicator.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/features/welcome/view/widgets/widget_image.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/features/welcome/view/widgets/widget_text.dart';
 import 'package:flutter/material.dart';
 
-class WelcomePage extends StatelessWidget {
-  WelcomePage({super.key});
+class WelcomePage extends StatefulWidget {
+  const WelcomePage({super.key});
 
-  final PageController _controller = PageController();
+  @override
+  State<WelcomePage> createState() => _WelcomePageState();
+}
+
+class _WelcomePageState extends State<WelcomePage> {
+  final PageController _controller1 = PageController();
+  final PageController _controller2 = PageController();
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +23,30 @@ class WelcomePage extends StatelessWidget {
           children: [
             SizedBox(
               width: double.infinity,
-              height: 700.0,
+              height: 560.0,
               child: PageView(
-                onPageChanged: (value) {},
-                controller: _controller,
-                children: _welcomeWidgetList(),
+                physics: const ClampingScrollPhysics(),
+                onPageChanged: (value) {
+                  _controller2.animateToPage(value,
+                      duration: const Duration(milliseconds: 50),
+                      curve: Curves.bounceInOut);
+                },
+                controller: _controller1,
+                children: welcomeImage(),
+              ),
+            ),
+            DotsIndicator(controller: _controller1),
+            SizedBox(
+              width: double.infinity,
+              height: 190.0,
+              child: PageView(
+                onPageChanged: (value) {
+                  _controller1.animateToPage(value,
+                      duration: const Duration(milliseconds: 200),
+                      curve: Curves.bounceInOut);
+                },
+                controller: _controller2,
+                children: welcomeText(),
               ),
             ),
             const Spacer(),
@@ -34,27 +60,5 @@ class WelcomePage extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  List<WelcomeWidgets> _welcomeWidgetList() {
-    return [
-      const WelcomeWidgets(
-        header: 'Lorem Ipsum',
-        subHeader:
-            'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-        image: ImageRes.welcomeImgBoy,
-      ),
-      const WelcomeWidgets(
-        header: 'Neque porro quisquam',
-        subHeader:
-            'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature.',
-        image: ImageRes.welcomeImgMan,
-      ),
-      const WelcomeWidgets(
-        header: 'Where can I get some?',
-        subHeader: 'Various versions have evolved over the years.',
-        image: ImageRes.welcomeImgReading,
-      ),
-    ];
   }
 }
