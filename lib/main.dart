@@ -1,5 +1,6 @@
 import 'package:cj_flutter_riverpod_tutorial_app/common/utils/app_styles.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/features/authentication/authentication.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/app_bar.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -16,7 +17,19 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: AppTheme.appThemeData,
-      home: const AuthPage(),
+      home: SafeArea(
+        child: Scaffold(
+          appBar: const CustomAppBar(),
+          body: Center(
+            child: Container(
+              color: Colors.blue,
+              width: 100,
+              height: 100,
+            ),
+          ),
+          bottomNavigationBar: const BottomNavBar(),
+        ),
+      ),
     );
   }
 }

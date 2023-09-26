@@ -11,33 +11,29 @@ class WelcomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Column(
+    return Column(
+      children: [
+        SizedBox(
+          width: double.infinity,
+          height: 700.0,
+          child: PageView(
+            physics: const ClampingScrollPhysics(),
+            controller: _pageController,
+            children: _welcomeImageText(),
+          ),
+        ),
+        DotsIndicator(
+          controller: _pageController,
+          count: _welcomeImageText().length,
+        ),
+        const Spacer(),
+        const Row(
           children: [
-            SizedBox(
-              width: double.infinity,
-              height: 700.0,
-              child: PageView(
-                physics: const ClampingScrollPhysics(),
-                controller: _pageController,
-                children: _welcomeImageText(),
-              ),
-            ),
-            DotsIndicator(
-              controller: _pageController,
-              count: _welcomeImageText().length,
-            ),
-            const Spacer(),
-            const Row(
-              children: [
-                WelcomeButton(text: 'Browse'),
-                WelcomeButton(text: 'Sign in'),
-              ],
-            ),
+            WelcomeButton(text: 'Browse'),
+            WelcomeButton(text: 'Sign in'),
           ],
         ),
-      ),
+      ],
     );
   }
 

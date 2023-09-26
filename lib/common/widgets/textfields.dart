@@ -6,6 +6,7 @@ class TextNormal extends StatelessWidget {
   final FontWeight? fontWeight;
   final TextAlign textAlign;
   final EFontSize fontSize;
+  final Color color;
 
   const TextNormal({
     Key? key,
@@ -13,6 +14,7 @@ class TextNormal extends StatelessWidget {
     this.fontWeight = FontWeight.normal,
     this.textAlign = TextAlign.center,
     required this.fontSize,
+    this.color = Colors.white,
   }) : super(key: key);
 
   @override
@@ -23,6 +25,7 @@ class TextNormal extends StatelessWidget {
       style: TextStyle(
         fontSize: fontSize.value,
         fontWeight: fontWeight,
+        color: color,
       ),
     );
   }

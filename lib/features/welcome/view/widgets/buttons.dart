@@ -2,8 +2,6 @@
 import 'package:cj_flutter_riverpod_tutorial_app/common/enums/border_radius.dart';
 import 'package:flutter/material.dart';
 
-import 'package:cj_flutter_riverpod_tutorial_app/common/utils/app_colors.dart';
-
 class WelcomeButton extends StatelessWidget {
   final String text;
   const WelcomeButton({
@@ -21,7 +19,7 @@ class WelcomeButton extends StatelessWidget {
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(EBorderRadius.s4.value),
-                side: const BorderSide(color: AppColors.primaryText),
+                side: const BorderSide(color: Colors.white),
               ),
             ),
           ),

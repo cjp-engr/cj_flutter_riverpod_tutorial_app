@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 
 import 'package:cj_flutter_riverpod_tutorial_app/common/enums/border_radius.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/enums/font_size.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/common/utils/app_colors.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/textfields.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -28,7 +27,7 @@ class AuthButton extends StatelessWidget {
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(EBorderRadius.s4.value),
-                side: const BorderSide(color: AppColors.primaryBackground),
+                side: const BorderSide(color: Colors.white),
               ),
             ),
           ),
