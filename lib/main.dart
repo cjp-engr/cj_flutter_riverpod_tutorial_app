@@ -1,5 +1,5 @@
 import 'package:cj_flutter_riverpod_tutorial_app/common/utils/app_styles.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/features/welcome/welcome.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/features/sign_in/sign_in.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,12 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      // theme: ThemeData(
-      //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      //   useMaterial3: true,
-      // ),
       theme: AppTheme.appThemeData,
-      home: WelcomePage(),
+      home: const SignInPage(),
     );
   }
 }
