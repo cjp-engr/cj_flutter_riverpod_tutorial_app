@@ -1,4 +1,4 @@
-enum KFontSize {
+enum EFontSize {
   s12(12),
   s16(16),
   s20(20),
@@ -6,6 +6,6 @@ enum KFontSize {
   s28(28),
   s32(32);
 
-  const KFontSize(this.value);
+  const EFontSize(this.value);
   final double value;
 }

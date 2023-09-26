@@ -5,7 +5,7 @@ class TextNormal extends StatelessWidget {
   final String text;
   final FontWeight? fontWeight;
   final TextAlign textAlign;
-  final KFontSize fontSize;
+  final EFontSize fontSize;
 
   const TextNormal({
     Key? key,
