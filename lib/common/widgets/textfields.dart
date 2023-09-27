@@ -13,7 +13,7 @@ class TextNormal extends StatelessWidget {
     this.text = "",
     this.fontWeight = FontWeight.normal,
     this.textAlign = TextAlign.center,
-    required this.fontSize,
+    this.fontSize = EFontSize.s12,
     this.color = Colors.white,
   }) : super(key: key);
 

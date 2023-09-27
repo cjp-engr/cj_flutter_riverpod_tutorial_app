@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:cj_flutter_riverpod_tutorial_app/common/enums/font_size.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/utils/constants.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/textfields.dart';
 import 'package:flutter/material.dart';
 
@@ -69,7 +70,7 @@ class BottomNavButton extends StatelessWidget {
           Icon(
             icon,
             color: Colors.white,
-            size: 30,
+            size: Constansts.iconSize,
           ),
           TextNormal(
             text: text,
