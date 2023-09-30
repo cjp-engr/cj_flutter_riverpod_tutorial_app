@@ -31,7 +31,7 @@ class LearningsPage extends StatelessWidget {
                     ...List.generate(
                       20,
                       (index) {
-                        return const TutorialDetails();
+                        return const LearningsTutorialDetails();
                       },
                     ),
                   ],

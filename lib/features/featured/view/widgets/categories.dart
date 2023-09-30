@@ -20,27 +20,19 @@ class FeaturedCategories extends StatelessWidget {
   }
 
   Widget _headerDisplay() {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
+    return const Padding(
+      padding: EdgeInsets.all(8.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const TutorialText(
+          TutorialText(
             text: 'Categories',
             fontSize: EFontSize.s24,
             fontWeight: FontWeight.bold,
           ),
-          TextButton(
-            onPressed: null,
-            style: TextButton.styleFrom(
-              minimumSize: Size.zero,
-              padding: EdgeInsets.zero,
-              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            ),
-            child: const TutorialText(
-              text: 'See all',
-              fontWeight: FontWeight.bold,
-            ),
+          TutorialButton(
+            text: 'See All',
+            buttonType: EButtonType.tertiary,
           )
         ],
       ),

@@ -34,15 +34,18 @@ class WelcomePage extends StatelessWidget {
           const Spacer(),
           Row(
             children: [
+              const SizedBox(width: 10),
               const TutorialButton(
                 text: 'Browse',
-                buttonType: EButtonType.primary,
+                buttonType: EButtonType.secondary,
               ),
+              const SizedBox(width: 10),
               TutorialButton(
                 text: 'Sign in',
                 onPressed: () => context.go(AppRoutesNames.auth),
                 buttonType: EButtonType.primary,
               ),
+              const SizedBox(width: 10),
             ],
           ),
         ],

@@ -13,7 +13,10 @@ String generateRandomString() {
 
 int generateRandomInt() {
   Random random = Random();
-
-  // Generate a random integer between 1 and 100
   return random.nextInt(100) + 1;
+}
+
+bool generateRandomBool() {
+  Random random = Random();
+  return random.nextBool();
 }

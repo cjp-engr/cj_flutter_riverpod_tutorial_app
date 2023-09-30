@@ -4,6 +4,7 @@ import 'package:cj_flutter_riverpod_tutorial_app/features/featured/featured.dart
 import 'package:cj_flutter_riverpod_tutorial_app/features/learnings/learnings.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/features/search/search.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/features/welcome/welcome.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/features/wishlist/wishlist.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -37,6 +38,12 @@ final GoRouter tutorialRoute = GoRouter(
       path: AppRoutesNames.learnings,
       builder: (BuildContext context, GoRouterState state) {
         return const LearningsPage();
+      },
+    ),
+    GoRoute(
+      path: AppRoutesNames.wishlist,
+      builder: (BuildContext context, GoRouterState state) {
+        return const WishListPage();
       },
     ),
   ],

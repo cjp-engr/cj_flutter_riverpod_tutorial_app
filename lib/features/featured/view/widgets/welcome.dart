@@ -1,3 +1,5 @@
+import 'package:cj_flutter_riverpod_tutorial_app/common/enums/button_type.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/buttons.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 import 'package:flutter/material.dart';
 
@@ -21,20 +23,13 @@ class FeaturedWelcome extends StatelessWidget {
             child: const Icon(Icons.person_outline, color: Colors.white),
           ),
           const SizedBox(width: 10),
-          Column(
+          const Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const TutorialText(text: 'Welcome, Carmen Carmen'),
-              const TutorialText(text: 'Aspiring Web Developer'),
-              TextButton(
-                onPressed: () {},
-                style: TextButton.styleFrom(
-                  minimumSize: Size.zero,
-                  padding: EdgeInsets.zero,
-                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                ),
-                child: const Text('Edit goal'),
-              )
+              TutorialText(text: 'Welcome, Carmen Carmen'),
+              TutorialText(text: 'Aspiring Web Developer'),
+              TutorialButton(
+                  buttonType: EButtonType.tertiary, text: 'Edit Goal')
             ],
           )
         ],

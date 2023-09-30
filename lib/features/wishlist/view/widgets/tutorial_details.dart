@@ -4,86 +4,53 @@ import 'package:cj_flutter_riverpod_tutorial_app/common/utils/random_generator.d
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 import 'package:flutter/material.dart';
 
-class TutorialsListDetails extends StatelessWidget {
-  const TutorialsListDetails({super.key});
+class WishListTutorialDetails extends StatelessWidget {
+  const WishListTutorialDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        _headerDisplay(),
-        _tutorialDetails(),
-      ],
-    );
-  }
-
-  Widget _headerDisplay() {
-    return const Padding(
-      padding: EdgeInsets.all(8.0),
-      child: TutorialText(
-        text: 'Popular for Web Developer',
-        fontSize: EFontSize.s24,
-        fontWeight: FontWeight.bold,
-      ),
-    );
-  }
-
-  Widget _tutorialDetails() {
-    return SizedBox(
-      height: 260,
-      width: double.infinity,
-      child: ListView.builder(
-        shrinkWrap: true,
-        scrollDirection: Axis.horizontal,
-        itemCount: 5,
-        itemBuilder: (context, index) => Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: SizedBox(
-            width: 180,
+    return Padding(
+      padding: const EdgeInsets.only(top: 8),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _displayImage(),
+          Padding(
+            padding: const EdgeInsets.only(left: 8, top: 5),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _image(),
-                _title(),
-                _instructorName(),
+                _displayTitle(),
+                const SizedBox(height: 2),
+                _displayAuthor(),
+                const SizedBox(height: 3),
                 _ratingDetails(),
+                const SizedBox(height: 3),
                 _price(),
                 generateRandomBool() ? _tag() : const SizedBox()
               ],
             ),
-          ),
-        ),
+          )
+        ],
       ),
     );
   }
 
-  Widget _image() {
-    return Image.network('https://picsum.photos/180/120',
-        width: 180, height: 120);
-  }
-
-  Widget _title() {
-    return const Padding(
-      padding: EdgeInsets.only(right: 8),
-      child: TutorialText(
-        text: 'Lorem Ipsum has been the industry\'s standard',
-        textAlign: TextAlign.start,
-        fontWeight: FontWeight.w900,
-      ),
+  Widget _displayImage() {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(5),
+      child: Image.network('https://picsum.photos/60/60'),
     );
   }
 
-  Widget _instructorName() {
-    return const Padding(
-      padding: EdgeInsets.only(right: 8),
-      child: TutorialText(
-        text: 'Hello Worlddd',
-        textAlign: TextAlign.start,
-        fontWeight: FontWeight.bold,
-        color: Colors.grey,
-      ),
-    );
+  Widget _displayTitle() {
+    return const TutorialText(
+        text: 'Python Django - The Practical Guide',
+        fontWeight: FontWeight.w900);
+  }
+
+  Widget _displayAuthor() {
+    return const TutorialText(text: 'Carmen Joy Palsario', color: Colors.grey);
   }
 
   Widget _ratingDetails() {
@@ -112,7 +79,7 @@ class TutorialsListDetails extends StatelessWidget {
         const TutorialText(
           text: '\$3,790.50',
           textAlign: TextAlign.start,
-          fontWeight: FontWeight.bold,
+          fontWeight: FontWeight.w900,
         ),
         const SizedBox(width: 5),
         Text('\$3,790.50',
@@ -120,7 +87,6 @@ class TutorialsListDetails extends StatelessWidget {
               decoration: TextDecoration.lineThrough,
               fontSize: EFontSize.s10.value,
               color: Colors.grey,
-              fontWeight: FontWeight.w900,
             ))
       ],
     );
@@ -140,9 +106,7 @@ class TutorialsListDetails extends StatelessWidget {
               ),
             ),
             child: const TutorialText(
-              text: 'Bestseller',
-              fontWeight: FontWeight.w900,
-            )),
+                text: 'Bestseller', fontWeight: FontWeight.w900)),
       ],
     );
   }

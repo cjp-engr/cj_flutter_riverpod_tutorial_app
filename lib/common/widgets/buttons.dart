@@ -22,9 +22,9 @@ class TutorialButton extends StatelessWidget {
       case EButtonType.primary:
         return _PrimaryButton(text: text, onPressed: onPressed);
       case EButtonType.secondary:
-        return const Placeholder();
+        return _SecondaryButton(text: text, onPressed: onPressed);
       case EButtonType.tertiary:
-        return const Placeholder();
+        return _TertiaryButton(text: text!);
       case EButtonType.category:
         return _CategoryButton(text: text, onPressed: onPressed);
       default:
@@ -62,6 +62,61 @@ class _PrimaryButton extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class _SecondaryButton extends StatelessWidget {
+  final String? text;
+  final VoidCallback? onPressed;
+  const _SecondaryButton({
+    Key? key,
+    this.text = '',
+    this.onPressed,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: SizedBox(
+        height: 60,
+        child: ElevatedButton(
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all<Color>(Colors.amber),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(EBorderRadius.s4.value),
+                side: const BorderSide(color: Colors.amber),
+              ),
+            ),
+          ),
+          onPressed: onPressed,
+          child: TutorialText(
+            text: text!,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _TertiaryButton extends StatelessWidget {
+  final String text;
+  const _TertiaryButton({
+    Key? key,
+    required this.text,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () {},
+      style: TextButton.styleFrom(
+        minimumSize: Size.zero,
+        padding: EdgeInsets.zero,
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+      ),
+      child: TutorialText(text: text, color: Colors.amber),
     );
   }
 }

@@ -3,8 +3,8 @@ import 'package:cj_flutter_riverpod_tutorial_app/common/utils/random_generator.d
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 import 'package:flutter/material.dart';
 
-class TutorialDetails extends StatelessWidget {
-  const TutorialDetails({super.key});
+class LearningsTutorialDetails extends StatelessWidget {
+  const LearningsTutorialDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,7 @@ class TutorialDetails extends StatelessWidget {
   Widget _displayTitle() {
     return const TutorialText(
         text: 'Python Django - The Practical Guide',
-        fontWeight: FontWeight.bold);
+        fontWeight: FontWeight.w900);
   }
 
   Widget _displayAuthor() {
