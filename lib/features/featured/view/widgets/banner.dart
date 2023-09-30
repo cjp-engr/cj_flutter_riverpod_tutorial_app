@@ -1,4 +1,6 @@
+import 'package:cj_flutter_riverpod_tutorial_app/common/enums/button_type.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/utils/image_res.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/buttons.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/features/welcome/view/widgets/dots_indicator.dart';
 import 'package:flutter/material.dart';
@@ -46,9 +48,9 @@ class FeaturedBanner extends StatelessWidget {
   }
 
   Widget _promoDisplay() {
-    return Stack(
+    return const Stack(
       children: [
-        const Positioned.fill(
+        Positioned.fill(
           child: Align(
             alignment: Alignment.center,
             child: Column(
@@ -63,15 +65,14 @@ class FeaturedBanner extends StatelessWidget {
         Positioned.fill(
           child: Align(
             alignment: Alignment.topRight,
-            child: TextButton(
-                onPressed: null,
-                style: TextButton.styleFrom(
-                  minimumSize: Size.zero,
-                  padding: const EdgeInsets.all(6),
-                  tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                ),
-                child:
-                    const TutorialText(text: 'X', fontWeight: FontWeight.bold)),
+            child: Padding(
+              padding: EdgeInsets.only(top: 8, right: 8),
+              child: TutorialButton(
+                text: 'X',
+                buttonType: EButtonType.tertiary,
+                textColor: Colors.white,
+              ),
+            ),
           ),
         ),
       ],

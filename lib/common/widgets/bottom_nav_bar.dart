@@ -41,9 +41,10 @@ class BottomNavBar extends StatelessWidget {
             text: 'Wishlist',
             onPressed: () => context.go(AppRoutesNames.wishlist),
           ),
-          const BottomNavButton(
+          BottomNavButton(
             icon: Icons.person_outline,
             text: 'Account',
+            onPressed: () => context.go(AppRoutesNames.account),
           ),
         ],
       ),

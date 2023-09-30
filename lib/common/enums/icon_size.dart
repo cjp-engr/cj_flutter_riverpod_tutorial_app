@@ -1,5 +1,5 @@
 enum EIconSize {
-  small(12),
+  small(17),
   large(30);
 
   const EIconSize(this.value);

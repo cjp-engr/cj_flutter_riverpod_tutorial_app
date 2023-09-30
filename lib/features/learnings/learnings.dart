@@ -25,16 +25,22 @@ class LearningsPage extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: SingleChildScrollView(
-                child: Column(
-                  children: [
-                    ...List.generate(
-                      20,
-                      (index) {
-                        return const LearningsTutorialDetails();
-                      },
-                    ),
-                  ],
+              child: NotificationListener<OverscrollIndicatorNotification>(
+                onNotification: (OverscrollIndicatorNotification overscroll) {
+                  overscroll.disallowIndicator();
+                  return false;
+                },
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      ...List.generate(
+                        20,
+                        (index) {
+                          return const LearningsTutorialDetails();
+                        },
+                      ),
+                    ],
+                  ),
                 ),
               ),
             )

@@ -8,11 +8,14 @@ import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 class TutorialButton extends StatelessWidget {
   final EButtonType buttonType;
   final String? text;
+  final Color? textColor;
   final VoidCallback? onPressed;
+
   const TutorialButton({
     Key? key,
     required this.buttonType,
     this.text,
+    this.textColor,
     this.onPressed,
   }) : super(key: key);
 
@@ -24,7 +27,7 @@ class TutorialButton extends StatelessWidget {
       case EButtonType.secondary:
         return _SecondaryButton(text: text, onPressed: onPressed);
       case EButtonType.tertiary:
-        return _TertiaryButton(text: text!);
+        return _TertiaryButton(text: text!, textColor: textColor);
       case EButtonType.category:
         return _CategoryButton(text: text, onPressed: onPressed);
       default:
@@ -102,9 +105,11 @@ class _SecondaryButton extends StatelessWidget {
 
 class _TertiaryButton extends StatelessWidget {
   final String text;
+  final Color? textColor;
   const _TertiaryButton({
     Key? key,
     required this.text,
+    this.textColor,
   }) : super(key: key);
 
   @override
@@ -116,7 +121,11 @@ class _TertiaryButton extends StatelessWidget {
         padding: EdgeInsets.zero,
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
       ),
-      child: TutorialText(text: text, color: Colors.amber),
+      child: TutorialText(
+        text: text,
+        color: textColor ?? Colors.amber,
+        fontWeight: FontWeight.w900,
+      ),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:cj_flutter_riverpod_tutorial_app/common/routes/app_routes_names.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/features/account/account.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/features/authentication/authentication.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/features/featured/featured.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/features/learnings/learnings.dart';
@@ -44,6 +45,12 @@ final GoRouter tutorialRoute = GoRouter(
       path: AppRoutesNames.wishlist,
       builder: (BuildContext context, GoRouterState state) {
         return const WishListPage();
+      },
+    ),
+    GoRoute(
+      path: AppRoutesNames.account,
+      builder: (BuildContext context, GoRouterState state) {
+        return const AccountPage();
       },
     ),
   ],

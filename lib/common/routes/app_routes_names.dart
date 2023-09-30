@@ -5,4 +5,5 @@ class AppRoutesNames {
   static const String search = '${base}search';
   static const String learnings = '${base}learnings';
   static const String wishlist = '${base}wishlist';
+  static const String account = '${base}account';
 }
