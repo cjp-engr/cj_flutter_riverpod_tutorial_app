@@ -1,3 +1,4 @@
+import 'package:cj_flutter_riverpod_tutorial_app/common/enums/button_type.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/routes/app_routes_names.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/utils/image_res.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/app_bar.dart';
@@ -33,10 +34,15 @@ class WelcomePage extends StatelessWidget {
           const Spacer(),
           Row(
             children: [
-              const PrimaryButton(text: 'Browse'),
-              PrimaryButton(
-                  text: 'Sign in',
-                  onPressed: () => context.go(AppRoutesNames.auth)),
+              const TutorialButton(
+                text: 'Browse',
+                buttonType: EButtonType.primary,
+              ),
+              TutorialButton(
+                text: 'Sign in',
+                onPressed: () => context.go(AppRoutesNames.auth),
+                buttonType: EButtonType.primary,
+              ),
             ],
           ),
         ],

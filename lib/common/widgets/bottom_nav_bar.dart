@@ -31,9 +31,10 @@ class BottomNavBar extends StatelessWidget {
             text: 'Search',
             onPressed: () => context.go(AppRoutesNames.search),
           ),
-          const BottomNavButton(
+          BottomNavButton(
             icon: Icons.play_circle_filled_outlined,
             text: 'Learnings',
+            onPressed: () => context.go(AppRoutesNames.learnings),
           ),
           const BottomNavButton(
             icon: Icons.favorite,

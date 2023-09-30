@@ -1,4 +1,5 @@
 import 'package:cj_flutter_riverpod_tutorial_app/common/enums/button_type.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/utils/random_generator.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/buttons.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 import 'package:flutter/material.dart';
@@ -33,8 +34,9 @@ class TopSearches extends StatelessWidget {
         spacing: 12,
         runSpacing: 3,
         children: List.generate(7, (index) {
-          return const TutorialButton(
+          return TutorialButton(
             buttonType: EButtonType.category,
+            text: generateRandomString(),
           );
         }),
       ),

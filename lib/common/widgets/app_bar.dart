@@ -25,9 +25,7 @@ class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
         appBar: AppBar(
           titleSpacing: 0,
           title: title,
-          actions: isAuthenticated && actions.isNotEmpty
-              ? _actionsDefault()
-              : actions,
+          actions: isAuthenticated ? _actionsDefault() : [],
         ),
         bottomNavigationBar:
             isAuthenticated ? const BottomNavBar() : const SizedBox(),
@@ -37,21 +35,23 @@ class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
   }
 
   List<Widget> _actionsDefault() {
-    return [
-      Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8),
-        child: IconButton(
-          icon: Icon(
-            Icons.shopping_cart,
-            size: EIconSize.large.value,
-            color: Colors.white,
-          ),
-          onPressed: () {
-            // handle the press
-          },
-        ),
-      ),
-    ];
+    return actions.isEmpty
+        ? [
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8),
+              child: IconButton(
+                icon: Icon(
+                  Icons.shopping_cart,
+                  size: EIconSize.large.value,
+                  color: Colors.white,
+                ),
+                onPressed: () {
+                  // handle the press
+                },
+              ),
+            ),
+          ]
+        : actions;
   }
 
   @override

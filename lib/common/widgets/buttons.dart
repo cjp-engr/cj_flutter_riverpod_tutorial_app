@@ -3,36 +3,42 @@ import 'package:flutter/material.dart';
 
 import 'package:cj_flutter_riverpod_tutorial_app/common/enums/border_radius.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/enums/button_type.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/common/utils/random_generator.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 
 class TutorialButton extends StatelessWidget {
   final EButtonType buttonType;
-  const TutorialButton({super.key, this.buttonType = EButtonType.primary});
+  final String? text;
+  final VoidCallback? onPressed;
+  const TutorialButton({
+    Key? key,
+    required this.buttonType,
+    this.text,
+    this.onPressed,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     switch (buttonType) {
       case EButtonType.primary:
-        return const Placeholder();
+        return _PrimaryButton(text: text, onPressed: onPressed);
       case EButtonType.secondary:
         return const Placeholder();
       case EButtonType.tertiary:
         return const Placeholder();
       case EButtonType.category:
-        return const CategoryButton();
+        return _CategoryButton(text: text, onPressed: onPressed);
       default:
         return const Placeholder();
     }
   }
 }
 
-class PrimaryButton extends StatelessWidget {
-  final String text;
+class _PrimaryButton extends StatelessWidget {
+  final String? text;
   final VoidCallback? onPressed;
-  const PrimaryButton({
+  const _PrimaryButton({
     Key? key,
-    required this.text,
+    this.text = '',
     this.onPressed,
   }) : super(key: key);
 
@@ -51,20 +57,30 @@ class PrimaryButton extends StatelessWidget {
             ),
           ),
           onPressed: onPressed,
-          child: Text(text),
+          child: TutorialText(
+            text: text!,
+          ),
         ),
       ),
     );
   }
 }
 
-class CategoryButton extends StatelessWidget {
-  const CategoryButton({super.key});
+class _CategoryButton extends StatelessWidget {
+  final String? text;
+  final VoidCallback? onPressed;
+  const _CategoryButton({
+    Key? key,
+    this.text,
+    this.onPressed,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ButtonStyle(
+        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+            const EdgeInsets.symmetric(horizontal: 10)),
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(EBorderRadius.s32.value),
@@ -76,9 +92,7 @@ class CategoryButton extends StatelessWidget {
         ),
       ),
       onPressed: () {},
-      child: TutorialText(
-        text: generateRandomString(),
-      ),
+      child: TutorialText(text: text!, fontWeight: FontWeight.bold),
     );
   }
 }

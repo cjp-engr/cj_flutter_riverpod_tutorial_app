@@ -10,3 +10,10 @@ String generateRandomString() {
   return List.generate(length, (_) => charset[random.nextInt(charset.length)])
       .join();
 }
+
+int generateRandomInt() {
+  Random random = Random();
+
+  // Generate a random integer between 1 and 100
+  return random.nextInt(100) + 1;
+}
