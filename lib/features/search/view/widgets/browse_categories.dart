@@ -1,6 +1,6 @@
 import 'package:cj_flutter_riverpod_tutorial_app/common/enums/icon_size.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/utils/random_generator.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/textfields.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 import 'package:flutter/material.dart';
 
 class BrowseCategories extends StatelessWidget {

@@ -1,17 +1,25 @@
 import 'package:cj_flutter_riverpod_tutorial_app/common/enums/font_size.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/routes/app_routes_names.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/utils/icon_res.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/app_bar.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/textfields.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/features/authentication/provider/authentication_notifier.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/features/authentication/view/widgets/buttons.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/features/welcome/provider/welcome_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
-class AuthPage extends ConsumerWidget {
+class AuthPage extends ConsumerStatefulWidget {
   const AuthPage({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<AuthPage> createState() => _AuthPageState();
+}
+
+class _AuthPageState extends ConsumerState<AuthPage> {
+  @override
+  Widget build(BuildContext context) {
     final bool hasAcc = ref.watch(authNotifierProvider);
     return CustomAppBar(
       body: Padding(
@@ -61,7 +69,14 @@ class AuthPage extends ConsumerWidget {
         text: '$txt with email',
         btnColor: Colors.white,
       ),
-      AuthButton(icon: IconRes.googleIcon, text: '$txt with Google'),
+      AuthButton(
+          icon: IconRes.googleIcon,
+          text: '$txt with Google',
+          // TODO: To be updated later
+          onPressed: () {
+            ref.read(welcomeNotifierProvider.notifier).isAuthenticated(true);
+            context.go(AppRoutesNames.feature);
+          }),
       AuthButton(icon: IconRes.facebookIcon, text: '$txt with Facebook'),
       AuthButton(icon: IconRes.appleIcon, text: '$txt with Apple'),
     ];

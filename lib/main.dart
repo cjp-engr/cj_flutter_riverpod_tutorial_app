@@ -16,6 +16,6 @@ class TutorialApp extends StatelessWidget {
     return MaterialApp.router(
         title: 'Flutter Demo',
         theme: AppTheme.appThemeData,
-        routerConfig: router);
+        routerConfig: tutorialRoute);
   }
 }

@@ -4,16 +4,21 @@ import 'package:flutter/material.dart';
 
 import 'package:cj_flutter_riverpod_tutorial_app/common/enums/border_radius.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/enums/font_size.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/textfields.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class AuthButton extends StatelessWidget {
   final String icon;
   final String text;
   final Color? btnColor;
+  final VoidCallback? onPressed;
 
   const AuthButton(
-      {super.key, required this.icon, required this.text, this.btnColor});
+      {super.key,
+      required this.icon,
+      required this.text,
+      this.btnColor,
+      this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +27,7 @@ class AuthButton extends StatelessWidget {
       child: SizedBox(
         height: 60,
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: onPressed,
           style: ButtonStyle(
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(

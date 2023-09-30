@@ -1,24 +1,43 @@
 import 'package:cj_flutter_riverpod_tutorial_app/common/routes/app_routes_names.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/features/authentication/authentication.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/features/featured/featured.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/features/learnings/learnings.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/features/search/search.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/features/welcome/welcome.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-final GoRouter router = GoRouter(
+final GoRouter tutorialRoute = GoRouter(
   routes: <RouteBase>[
     GoRoute(
-      path: AppRoutesNames.welcome,
+      path: AppRoutesNames.base,
       builder: (BuildContext context, GoRouterState state) {
         return WelcomePage();
       },
-      routes: <RouteBase>[
-        GoRoute(
-          path: AppRoutesNames.auth,
-          builder: (BuildContext context, GoRouterState state) {
-            return const AuthPage();
-          },
-        ),
-      ],
+    ),
+    GoRoute(
+      path: AppRoutesNames.auth,
+      builder: (BuildContext context, GoRouterState state) {
+        return const AuthPage();
+      },
+    ),
+    GoRoute(
+      path: AppRoutesNames.feature,
+      builder: (BuildContext context, GoRouterState state) {
+        return const FeaturedPage();
+      },
+    ),
+    GoRoute(
+      path: AppRoutesNames.search,
+      builder: (BuildContext context, GoRouterState state) {
+        return const SearchPage();
+      },
+    ),
+    GoRoute(
+      path: AppRoutesNames.learnings,
+      builder: (BuildContext context, GoRouterState state) {
+        return const LearningsPage();
+      },
     ),
   ],
 );

@@ -1,5 +1,5 @@
 import 'package:cj_flutter_riverpod_tutorial_app/common/utils/image_res.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/textfields.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/features/welcome/view/widgets/dots_indicator.dart';
 import 'package:flutter/material.dart';
 

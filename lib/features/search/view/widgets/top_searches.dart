@@ -1,6 +1,6 @@
 import 'package:cj_flutter_riverpod_tutorial_app/common/enums/button_type.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/buttons.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/textfields.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 import 'package:flutter/material.dart';
 
 class TopSearches extends StatelessWidget {
@@ -11,6 +11,7 @@ class TopSearches extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        const SizedBox(height: 5),
         _displayHeader(),
         const SizedBox(height: 10),
         _categoriesList()

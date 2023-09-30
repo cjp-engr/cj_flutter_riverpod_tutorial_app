@@ -23,12 +23,15 @@ class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          titleSpacing: 0,
           title: title,
-          actions: isAuthenticated ? _actionsDefault() : actions,
+          actions: isAuthenticated && actions.isNotEmpty
+              ? _actionsDefault()
+              : actions,
         ),
-        body: body,
         bottomNavigationBar:
             isAuthenticated ? const BottomNavBar() : const SizedBox(),
+        body: body,
       ),
     );
   }
@@ -36,14 +39,13 @@ class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
   List<Widget> _actionsDefault() {
     return [
       Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.symmetric(vertical: 8),
         child: IconButton(
           icon: Icon(
             Icons.shopping_cart,
             size: EIconSize.large.value,
             color: Colors.white,
           ),
-          tooltip: 'Open shopping cart',
           onPressed: () {
             // handle the press
           },

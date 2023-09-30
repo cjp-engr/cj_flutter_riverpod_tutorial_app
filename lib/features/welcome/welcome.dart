@@ -1,9 +1,11 @@
+import 'package:cj_flutter_riverpod_tutorial_app/common/routes/app_routes_names.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/utils/image_res.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/app_bar.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/features/welcome/view/widgets/buttons.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/buttons.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/features/welcome/view/widgets/dots_indicator.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/features/welcome/view/widgets/welcome_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class WelcomePage extends StatelessWidget {
   WelcomePage({super.key});
@@ -29,10 +31,12 @@ class WelcomePage extends StatelessWidget {
             count: _welcomeImageText().length,
           ),
           const Spacer(),
-          const Row(
+          Row(
             children: [
-              WelcomeButton(text: 'Browse'),
-              WelcomeButton(text: 'Sign in'),
+              const PrimaryButton(text: 'Browse'),
+              PrimaryButton(
+                  text: 'Sign in',
+                  onPressed: () => context.go(AppRoutesNames.auth)),
             ],
           ),
         ],
