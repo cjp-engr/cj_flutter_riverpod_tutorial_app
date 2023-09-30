@@ -20,7 +20,7 @@ class TutorialsListDetails extends StatelessWidget {
   Widget _headerDisplay() {
     return const Padding(
       padding: EdgeInsets.all(8.0),
-      child: TextNormal(
+      child: TutorialText(
         text: 'Popular for Web Developer',
         fontSize: EFontSize.s24,
         fontWeight: FontWeight.bold,
@@ -65,7 +65,7 @@ class TutorialsListDetails extends StatelessWidget {
   Widget _title() {
     return const Padding(
       padding: EdgeInsets.only(right: 8),
-      child: TextNormal(
+      child: TutorialText(
         text: 'Lorem Ipsum has been the industry\'s standard',
         textAlign: TextAlign.start,
         fontWeight: FontWeight.bold,
@@ -76,7 +76,7 @@ class TutorialsListDetails extends StatelessWidget {
   Widget _instructorName() {
     return const Padding(
       padding: EdgeInsets.only(right: 8),
-      child: TextNormal(
+      child: TutorialText(
         text: 'Hello Worlddd',
         textAlign: TextAlign.start,
         fontWeight: FontWeight.bold,
@@ -88,7 +88,7 @@ class TutorialsListDetails extends StatelessWidget {
   Widget _ratingDetails() {
     return const Row(
       children: [
-        TextNormal(text: '4.7'),
+        TutorialText(text: '4.7'),
         SizedBox(width: 2),
         Row(
           children: [
@@ -100,7 +100,7 @@ class TutorialsListDetails extends StatelessWidget {
           ],
         ),
         SizedBox(width: 2),
-        TextNormal(text: '(188,327)'),
+        TutorialText(text: '(188,327)'),
       ],
     );
   }
@@ -108,7 +108,7 @@ class TutorialsListDetails extends StatelessWidget {
   Widget _price() {
     return Row(
       children: [
-        const TextNormal(
+        const TutorialText(
           text: '\$3,790.50',
           textAlign: TextAlign.start,
           fontWeight: FontWeight.bold,
@@ -137,7 +137,7 @@ class TutorialsListDetails extends StatelessWidget {
                 Radius.circular(EBorderRadius.s4.value),
               ),
             ),
-            child: const TextNormal(text: 'Bestseller')),
+            child: const TutorialText(text: 'Bestseller')),
       ],
     );
   }

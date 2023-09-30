@@ -20,14 +20,14 @@ class WelcomeWidgets extends StatelessWidget {
         Image.asset(image),
         Column(
           children: [
-            TextNormal(
+            TutorialText(
               text: header,
               fontSize: EFontSize.s20,
             ),
             const SizedBox(height: 10),
             SizedBox(
               width: 300,
-              child: TextNormal(
+              child: TutorialText(
                 text: subHeader,
                 fontSize: EFontSize.s12,
               ),

@@ -39,7 +39,7 @@ class AuthButton extends StatelessWidget {
                 child: Image.asset(icon, color: btnColor),
               ),
               const SizedBox(width: 15),
-              TextNormal(
+              TutorialText(
                 text: text,
                 fontWeight: FontWeight.bold,
                 fontSize: EFontSize.s12,

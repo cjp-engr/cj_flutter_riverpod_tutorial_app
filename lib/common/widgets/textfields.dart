@@ -1,14 +1,14 @@
 import 'package:cj_flutter_riverpod_tutorial_app/common/enums/font_size.dart';
 import 'package:flutter/material.dart';
 
-class TextNormal extends StatelessWidget {
+class TutorialText extends StatelessWidget {
   final String text;
   final FontWeight? fontWeight;
   final TextAlign textAlign;
   final EFontSize fontSize;
   final Color color;
 
-  const TextNormal({
+  const TutorialText({
     Key? key,
     this.text = "",
     this.fontWeight = FontWeight.normal,

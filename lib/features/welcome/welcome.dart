@@ -1,4 +1,5 @@
 import 'package:cj_flutter_riverpod_tutorial_app/common/utils/image_res.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/app_bar.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/features/welcome/view/widgets/buttons.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/features/welcome/view/widgets/dots_indicator.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/features/welcome/view/widgets/welcome_widgets.dart';
@@ -11,29 +12,31 @@ class WelcomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          width: double.infinity,
-          height: 700.0,
-          child: PageView(
-            physics: const ClampingScrollPhysics(),
-            controller: _pageController,
-            children: _welcomeImageText(),
+    return CustomAppBar(
+      body: Column(
+        children: [
+          SizedBox(
+            width: double.infinity,
+            height: 600.0,
+            child: PageView(
+              physics: const ClampingScrollPhysics(),
+              controller: _pageController,
+              children: _welcomeImageText(),
+            ),
           ),
-        ),
-        DotsIndicator(
-          controller: _pageController,
-          count: _welcomeImageText().length,
-        ),
-        const Spacer(),
-        const Row(
-          children: [
-            WelcomeButton(text: 'Browse'),
-            WelcomeButton(text: 'Sign in'),
-          ],
-        ),
-      ],
+          DotsIndicator(
+            controller: _pageController,
+            count: _welcomeImageText().length,
+          ),
+          const Spacer(),
+          const Row(
+            children: [
+              WelcomeButton(text: 'Browse'),
+              WelcomeButton(text: 'Sign in'),
+            ],
+          ),
+        ],
+      ),
     );
   }
 

@@ -1,5 +1,6 @@
-import 'package:cj_flutter_riverpod_tutorial_app/common/enums/border_radius.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/enums/button_type.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/enums/font_size.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/buttons.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/textfields.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,7 @@ class FeaturedCategories extends StatelessWidget {
       children: [
         _headerDisplay(),
         const SizedBox(height: 10),
-        _categoriesList(),
+        _categoriesList(context),
       ],
     );
   }
@@ -23,7 +24,7 @@ class FeaturedCategories extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const TextNormal(
+          const TutorialText(
             text: 'Categories',
             fontSize: EFontSize.s24,
             fontWeight: FontWeight.bold,
@@ -35,7 +36,7 @@ class FeaturedCategories extends StatelessWidget {
               padding: EdgeInsets.zero,
               tapTargetSize: MaterialTapTargetSize.shrinkWrap,
             ),
-            child: const TextNormal(
+            child: const TutorialText(
               text: 'See all',
               fontWeight: FontWeight.bold,
             ),
@@ -45,37 +46,29 @@ class FeaturedCategories extends StatelessWidget {
     );
   }
 
-  Widget _categoriesList() {
-    return SizedBox(
-      height: 100,
-      width: double.infinity,
-      child: GridView.builder(
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            mainAxisExtent: 105, crossAxisCount: 2),
+  Widget _categoriesList(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 8),
+      child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
-        itemCount: 20,
-        itemBuilder: (_, index) {
-          return Column(
-            children: [
-              ElevatedButton(
-                onPressed: null,
-                style: ButtonStyle(
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                      borderRadius:
-                          BorderRadius.circular(EBorderRadius.s32.value),
-                      side: const BorderSide(color: Colors.white),
-                    ),
-                  ),
-                ),
-                child: TextNormal(
-                  text: 'index $index',
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
-          );
-        },
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            maxHeight: MediaQuery.of(context).size.height * 0.8,
+            maxWidth: MediaQuery.of(context).size.height * 1,
+          ),
+          child: Wrap(
+            spacing: 12,
+            runSpacing: 2,
+            children: List.generate(
+              12,
+              (index) {
+                return const TutorialButton(
+                  buttonType: EButtonType.category,
+                );
+              },
+            ),
+          ),
+        ),
       ),
     );
   }

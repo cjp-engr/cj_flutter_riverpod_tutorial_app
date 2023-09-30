@@ -24,8 +24,8 @@ class FeaturedWelcome extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const TextNormal(text: 'Welcome, Carmen Carmen'),
-              const TextNormal(text: 'Aspiring Web Developer'),
+              const TutorialText(text: 'Welcome, Carmen Carmen'),
+              const TutorialText(text: 'Aspiring Web Developer'),
               TextButton(
                 onPressed: () {},
                 style: TextButton.styleFrom(

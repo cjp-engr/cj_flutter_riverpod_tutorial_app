@@ -54,8 +54,8 @@ class FeaturedBanner extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                TextNormal(text: 'Course on sale from \$649.00'),
-                TextNormal(text: '1 day left!', fontWeight: FontWeight.bold),
+                TutorialText(text: 'Course on sale from \$649.00'),
+                TutorialText(text: '1 day left!', fontWeight: FontWeight.bold),
               ],
             ),
           ),
@@ -71,7 +71,7 @@ class FeaturedBanner extends StatelessWidget {
                   tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 ),
                 child:
-                    const TextNormal(text: 'X', fontWeight: FontWeight.bold)),
+                    const TutorialText(text: 'X', fontWeight: FontWeight.bold)),
           ),
         ),
       ],
