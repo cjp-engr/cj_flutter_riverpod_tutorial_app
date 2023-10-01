@@ -1,5 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:cj_flutter_riverpod_tutorial_app/features/authentication/provider/authentication_notifier.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/auth_checker/auth_checker.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/enums/button_type.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/buttons.dart';
 import 'package:flutter/material.dart';
 
 import 'package:cj_flutter_riverpod_tutorial_app/common/enums/border_radius.dart';
@@ -7,13 +9,13 @@ import 'package:cj_flutter_riverpod_tutorial_app/common/enums/font_size.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class AuthButton extends StatelessWidget {
+class LoginRegister extends StatelessWidget {
   final String icon;
   final String text;
   final Color? btnColor;
   final VoidCallback? onPressed;
 
-  const AuthButton(
+  const LoginRegister(
       {super.key,
       required this.icon,
       required this.text,
@@ -57,22 +59,23 @@ class AuthButton extends StatelessWidget {
   }
 }
 
-class TextAuthButton extends ConsumerStatefulWidget {
-  const TextAuthButton({
+class TextLoginRegister extends ConsumerStatefulWidget {
+  const TextLoginRegister({
     Key? key,
   }) : super(key: key);
 
   @override
-  ConsumerState<TextAuthButton> createState() => _TextAuthButtonState();
+  ConsumerState<TextLoginRegister> createState() => _TextLoginRegisterState();
 }
 
-class _TextAuthButtonState extends ConsumerState<TextAuthButton> {
+class _TextLoginRegisterState extends ConsumerState<TextLoginRegister> {
   @override
   Widget build(BuildContext context) {
-    final bool hasAcc = ref.watch(authNotifierProvider);
-    return TextButton(
+    final bool hasAcc = ref.watch(authCheckerProvider).hasAccount;
+    return TutorialButton(
+        text: hasAcc ? 'Log in' : 'Create an account',
+        buttonType: EButtonType.tertiary,
         onPressed: () =>
-            ref.read(authNotifierProvider.notifier).hasAccount(!hasAcc),
-        child: Text(hasAcc ? 'Log in' : 'Create an account'));
+            ref.read(authCheckerProvider.notifier).onHasAccountCheck(!hasAcc));
   }
 }

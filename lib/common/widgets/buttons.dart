@@ -27,7 +27,8 @@ class TutorialButton extends StatelessWidget {
       case EButtonType.secondary:
         return _SecondaryButton(text: text, onPressed: onPressed);
       case EButtonType.tertiary:
-        return _TertiaryButton(text: text!, textColor: textColor);
+        return _TertiaryButton(
+            text: text!, textColor: textColor, onPressed: onPressed);
       case EButtonType.category:
         return _CategoryButton(text: text, onPressed: onPressed);
       default:
@@ -106,16 +107,18 @@ class _SecondaryButton extends StatelessWidget {
 class _TertiaryButton extends StatelessWidget {
   final String text;
   final Color? textColor;
+  final VoidCallback? onPressed;
   const _TertiaryButton({
     Key? key,
     required this.text,
     this.textColor,
+    this.onPressed,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () {},
+      onPressed: onPressed,
       style: TextButton.styleFrom(
         minimumSize: Size.zero,
         padding: EdgeInsets.zero,

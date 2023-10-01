@@ -42,7 +42,7 @@ class WelcomePage extends StatelessWidget {
               const SizedBox(width: 10),
               TutorialButton(
                 text: 'Sign in',
-                onPressed: () => context.go(AppRoutesNames.auth),
+                onPressed: () => context.go(AppRoutesNames.login),
                 buttonType: EButtonType.primary,
               ),
               const SizedBox(width: 10),

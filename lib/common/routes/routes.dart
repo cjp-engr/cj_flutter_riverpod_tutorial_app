@@ -1,6 +1,6 @@
 import 'package:cj_flutter_riverpod_tutorial_app/common/routes/app_routes_names.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/features/account/account.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/features/authentication/authentication.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/features/login_register/login_register.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/features/featured/featured.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/features/learnings/learnings.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/features/search/search.dart';
@@ -18,9 +18,9 @@ final GoRouter tutorialRoute = GoRouter(
       },
     ),
     GoRoute(
-      path: AppRoutesNames.auth,
+      path: AppRoutesNames.login,
       builder: (BuildContext context, GoRouterState state) {
-        return const AuthPage();
+        return const LoginRegisterPage();
       },
     ),
     GoRoute(

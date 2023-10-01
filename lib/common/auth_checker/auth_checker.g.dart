@@ -1,25 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'authentication_notifier.dart';
+part of 'auth_checker.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$authNotifierHash() => r'39ea10f4f398b39ec55c5ca8a2f3bb76d190639d';
+String _$authCheckerHash() => r'1d3bccf0a0c43591c7b78a39349c64973932cb9c';
 
-/// See also [AuthNotifier].
-@ProviderFor(AuthNotifier)
-final authNotifierProvider =
-    AutoDisposeNotifierProvider<AuthNotifier, bool>.internal(
-  AuthNotifier.new,
-  name: r'authNotifierProvider',
+/// See also [AuthChecker].
+@ProviderFor(AuthChecker)
+final authCheckerProvider =
+    AutoDisposeNotifierProvider<AuthChecker, AuthState>.internal(
+  AuthChecker.new,
+  name: r'authCheckerProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$authNotifierHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$authCheckerHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$AuthNotifier = AutoDisposeNotifier<bool>;
+typedef _$AuthChecker = AutoDisposeNotifier<AuthState>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

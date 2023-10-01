@@ -1,6 +1,7 @@
 class AppRoutesNames {
   static const String base = '/';
-  static const String auth = '${base}auth';
+  static const String login = '${base}login';
+  static const String signup = '${base}signup';
   static const String feature = '${base}feature';
   static const String search = '${base}search';
   static const String learnings = '${base}learnings';

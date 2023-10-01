@@ -56,7 +56,10 @@ class AccountPage extends StatelessWidget {
               Column(
                 children: [
                   SizedBox(height: 20),
-                  AccountButton(text: 'Sign out'),
+                  AccountButton(
+                    text: 'Sign out',
+                    isSignOut: true,
+                  ),
                   SizedBox(height: 40),
                 ],
               )

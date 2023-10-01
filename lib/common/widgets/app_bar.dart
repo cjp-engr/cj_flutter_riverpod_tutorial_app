@@ -1,6 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:cj_flutter_riverpod_tutorial_app/common/auth_checker/auth_checker.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/bottom_nav_bar.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/features/welcome/provider/welcome_notifier.dart';
 import 'package:flutter/material.dart';
 
 import 'package:cj_flutter_riverpod_tutorial_app/common/enums/icon_size.dart';
@@ -19,7 +19,7 @@ class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isAuthenticated = ref.watch(welcomeNotifierProvider);
+    final isAuthenticated = ref.watch(authCheckerProvider).isAuthenticated;
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(

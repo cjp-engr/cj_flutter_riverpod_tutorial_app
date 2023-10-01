@@ -1,26 +1,25 @@
+import 'package:cj_flutter_riverpod_tutorial_app/common/auth_checker/auth_checker.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/enums/font_size.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/routes/app_routes_names.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/utils/icon_res.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/app_bar.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/features/authentication/provider/authentication_notifier.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/features/authentication/view/widgets/buttons.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/features/welcome/provider/welcome_notifier.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/features/login_register/view/widgets/buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-class AuthPage extends ConsumerStatefulWidget {
-  const AuthPage({super.key});
+class LoginRegisterPage extends ConsumerStatefulWidget {
+  const LoginRegisterPage({super.key});
 
   @override
-  ConsumerState<AuthPage> createState() => _AuthPageState();
+  ConsumerState<LoginRegisterPage> createState() => _LoginRegisterPageState();
 }
 
-class _AuthPageState extends ConsumerState<AuthPage> {
+class _LoginRegisterPageState extends ConsumerState<LoginRegisterPage> {
   @override
   Widget build(BuildContext context) {
-    final bool hasAcc = ref.watch(authNotifierProvider);
+    final bool hasAcc = ref.watch(authCheckerProvider).hasAccount;
     return CustomAppBar(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -53,7 +52,7 @@ class _AuthPageState extends ConsumerState<AuthPage> {
                 fontSize: EFontSize.s12,
               ),
               const SizedBox(width: 2),
-              const TextAuthButton(),
+              const TextLoginRegister(),
             ],
           ),
         ]),
@@ -64,21 +63,21 @@ class _AuthPageState extends ConsumerState<AuthPage> {
   List<Widget> _buttonList(bool hasAcc) {
     String txt = hasAcc ? 'Sign In' : 'Sign Up';
     return [
-      AuthButton(
+      LoginRegister(
         icon: IconRes.emailIcon,
         text: '$txt with email',
         btnColor: Colors.white,
       ),
-      AuthButton(
+      LoginRegister(
           icon: IconRes.googleIcon,
           text: '$txt with Google',
           // TODO: To be updated later
           onPressed: () {
-            ref.read(welcomeNotifierProvider.notifier).isAuthenticated(true);
+            ref.read(authCheckerProvider.notifier).onAuthentication(true);
             context.go(AppRoutesNames.feature);
           }),
-      AuthButton(icon: IconRes.facebookIcon, text: '$txt with Facebook'),
-      AuthButton(icon: IconRes.appleIcon, text: '$txt with Apple'),
+      LoginRegister(icon: IconRes.facebookIcon, text: '$txt with Facebook'),
+      LoginRegister(icon: IconRes.appleIcon, text: '$txt with Apple'),
     ];
   }
 }
