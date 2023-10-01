@@ -18,4 +18,6 @@ class AuthChecker extends _$AuthChecker {
   void onHasAccountCheck(bool hasAcc) {
     state = state.copyWith(hasAccount: hasAcc);
   }
+
+  void test() {}
 }
