@@ -7,6 +7,7 @@ class TutorialText extends StatelessWidget {
   final TextAlign textAlign;
   final EFontSize fontSize;
   final Color color;
+  final TextStyle? style;
 
   const TutorialText({
     Key? key,
@@ -15,6 +16,7 @@ class TutorialText extends StatelessWidget {
     this.textAlign = TextAlign.center,
     this.fontSize = EFontSize.s12,
     this.color = Colors.white,
+    this.style,
   }) : super(key: key);
 
   @override
@@ -22,11 +24,12 @@ class TutorialText extends StatelessWidget {
     return Text(
       text,
       textAlign: textAlign,
-      style: TextStyle(
-        fontSize: fontSize.value,
-        fontWeight: fontWeight,
-        color: color,
-      ),
+      style: style ??
+          TextStyle(
+            fontSize: fontSize.value,
+            fontWeight: fontWeight,
+            color: color,
+          ),
     );
   }
 }

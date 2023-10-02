@@ -1,5 +1,6 @@
 import 'package:cj_flutter_riverpod_tutorial_app/common/enums/border_radius.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/enums/font_size.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/enums/icon_size.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/utils/random_generator.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 import 'package:flutter/material.dart';
@@ -24,10 +25,10 @@ class WishListTutorialDetails extends StatelessWidget {
                 const SizedBox(height: 2),
                 _displayAuthor(),
                 const SizedBox(height: 3),
-                _ratingDetails(),
+                _displayRating(),
                 const SizedBox(height: 3),
-                _price(),
-                generateRandomBool() ? _tag() : const SizedBox()
+                _displayPrice(),
+                generateRandomBool() ? _displayTag() : const SizedBox()
               ],
             ),
           )
@@ -53,27 +54,27 @@ class WishListTutorialDetails extends StatelessWidget {
     return const TutorialText(text: 'Carmen Joy Palsario', color: Colors.grey);
   }
 
-  Widget _ratingDetails() {
-    return const Row(
+  Widget _displayRating() {
+    return Row(
       children: [
-        TutorialText(text: '4.7'),
-        SizedBox(width: 2),
+        const TutorialText(text: '4.7'),
+        const SizedBox(width: 2),
         Row(
           children: [
-            Icon(Icons.star, size: 14),
-            Icon(Icons.star, size: 14),
-            Icon(Icons.star, size: 14),
-            Icon(Icons.star, size: 14),
-            Icon(Icons.star_border_outlined, size: 14)
+            Icon(Icons.star, size: EIconSize.verySmall.value),
+            Icon(Icons.star, size: EIconSize.verySmall.value),
+            Icon(Icons.star, size: EIconSize.verySmall.value),
+            Icon(Icons.star, size: EIconSize.verySmall.value),
+            Icon(Icons.star_border_outlined, size: EIconSize.verySmall.value)
           ],
         ),
-        SizedBox(width: 2),
-        TutorialText(text: '(188,327)'),
+        const SizedBox(width: 2),
+        const TutorialText(text: '(188,327)'),
       ],
     );
   }
 
-  Widget _price() {
+  Widget _displayPrice() {
     return Row(
       children: [
         const TutorialText(
@@ -82,31 +83,34 @@ class WishListTutorialDetails extends StatelessWidget {
           fontWeight: FontWeight.w900,
         ),
         const SizedBox(width: 5),
-        Text('\$3,790.50',
-            style: TextStyle(
-              decoration: TextDecoration.lineThrough,
-              fontSize: EFontSize.s10.value,
-              color: Colors.grey,
-            ))
+        TutorialText(
+          text: '\$5,790.50',
+          style: TextStyle(
+            decoration: TextDecoration.lineThrough,
+            fontSize: EFontSize.s10.value,
+            color: Colors.grey,
+          ),
+        )
       ],
     );
   }
 
-  Widget _tag() {
+  Widget _displayTag() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const SizedBox(height: 5),
         Container(
-            padding: const EdgeInsets.all(5.0),
-            decoration: BoxDecoration(
-              color: Colors.amber,
-              borderRadius: BorderRadius.all(
-                Radius.circular(EBorderRadius.s4.value),
-              ),
+          padding: const EdgeInsets.all(5.0),
+          decoration: BoxDecoration(
+            color: Colors.amber,
+            borderRadius: BorderRadius.all(
+              Radius.circular(EBorderRadius.s4.value),
             ),
-            child: const TutorialText(
-                text: 'Bestseller', fontWeight: FontWeight.w900)),
+          ),
+          child: const TutorialText(
+              text: 'Bestseller', fontWeight: FontWeight.w900),
+        ),
       ],
     );
   }

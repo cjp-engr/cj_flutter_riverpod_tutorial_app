@@ -3,7 +3,7 @@ import 'package:cj_flutter_riverpod_tutorial_app/common/routes/app_routes_names.
 import 'package:cj_flutter_riverpod_tutorial_app/common/utils/image_res.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/app_bar.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/buttons.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/features/welcome/view/widgets/dots_indicator.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/dots_indicator.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/features/welcome/view/widgets/welcome_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';

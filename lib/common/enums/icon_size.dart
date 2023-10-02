@@ -1,4 +1,5 @@
 enum EIconSize {
+  verySmall(14),
   small(17),
   large(30);
 
