@@ -1,3 +1,4 @@
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/spacing.dart';
 import 'package:flutter/material.dart';
 
 class CustomSearchBar extends StatelessWidget {
@@ -6,7 +7,8 @@ class CustomSearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.only(left: 8, top: 8),
+      padding:
+          EdgeInsets.only(left: KSpacing.verySmall, top: KSpacing.verySmall),
       child: SizedBox(
         width: double.infinity,
         height: 50,

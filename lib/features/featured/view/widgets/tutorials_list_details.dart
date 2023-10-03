@@ -1,5 +1,6 @@
-import 'package:cj_flutter_riverpod_tutorial_app/common/enums/border_radius.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/common/enums/font_size.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/border_radius.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/font_size.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/spacing.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/utils/random_generator.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 import 'package:flutter/material.dart';
@@ -20,10 +21,10 @@ class TutorialsListDetails extends StatelessWidget {
 
   Widget _headerDisplay() {
     return const Padding(
-      padding: EdgeInsets.all(8.0),
+      padding: EdgeInsets.all(KSpacing.verySmall),
       child: TutorialText(
         text: 'Popular for Web Developer',
-        fontSize: EFontSize.s24,
+        fontSize: KFontSize.s24,
         fontWeight: FontWeight.bold,
       ),
     );
@@ -38,7 +39,7 @@ class TutorialsListDetails extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: 5,
         itemBuilder: (context, index) => Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(KSpacing.verySmall),
           child: SizedBox(
             width: 180,
             child: Column(
@@ -65,7 +66,7 @@ class TutorialsListDetails extends StatelessWidget {
 
   Widget _title() {
     return const Padding(
-      padding: EdgeInsets.only(right: 8),
+      padding: EdgeInsets.only(right: KSpacing.verySmall),
       child: TutorialText(
         text: 'Lorem Ipsum has been the industry\'s standard',
         textAlign: TextAlign.start,
@@ -76,7 +77,7 @@ class TutorialsListDetails extends StatelessWidget {
 
   Widget _instructorName() {
     return const Padding(
-      padding: EdgeInsets.only(right: 8),
+      padding: EdgeInsets.only(right: KSpacing.verySmall),
       child: TutorialText(
         text: 'Hello Worlddd',
         textAlign: TextAlign.start,
@@ -107,18 +108,18 @@ class TutorialsListDetails extends StatelessWidget {
   }
 
   Widget _price() {
-    return Row(
+    return const Row(
       children: [
-        const TutorialText(
+        TutorialText(
           text: '\$3,790.50',
           textAlign: TextAlign.start,
           fontWeight: FontWeight.bold,
         ),
-        const SizedBox(width: 5),
+        SizedBox(width: 5),
         Text('\$3,790.50',
             style: TextStyle(
               decoration: TextDecoration.lineThrough,
-              fontSize: EFontSize.s10.value,
+              fontSize: KFontSize.s10,
               color: Colors.grey,
               fontWeight: FontWeight.w900,
             ))
@@ -133,10 +134,10 @@ class TutorialsListDetails extends StatelessWidget {
         const SizedBox(height: 5),
         Container(
             padding: const EdgeInsets.all(5.0),
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.amber,
               borderRadius: BorderRadius.all(
-                Radius.circular(EBorderRadius.s4.value),
+                Radius.circular(KBorderRadius.s4),
               ),
             ),
             child: const TutorialText(

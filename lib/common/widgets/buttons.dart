@@ -1,7 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/border_radius.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/spacing.dart';
 import 'package:flutter/material.dart';
 
-import 'package:cj_flutter_riverpod_tutorial_app/common/enums/border_radius.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/enums/button_type.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 
@@ -55,7 +56,7 @@ class _PrimaryButton extends StatelessWidget {
           style: ButtonStyle(
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(EBorderRadius.s4.value),
+                borderRadius: BorderRadius.circular(KBorderRadius.s4),
                 side: const BorderSide(color: Colors.white),
               ),
             ),
@@ -89,7 +90,7 @@ class _SecondaryButton extends StatelessWidget {
             backgroundColor: MaterialStateProperty.all<Color>(Colors.amber),
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(EBorderRadius.s4.value),
+                borderRadius: BorderRadius.circular(KBorderRadius.s4),
                 side: const BorderSide(color: Colors.amber),
               ),
             ),
@@ -147,10 +148,11 @@ class _CategoryButton extends StatelessWidget {
     return ElevatedButton(
       style: ButtonStyle(
         padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-            const EdgeInsets.symmetric(horizontal: 10)),
+          const EdgeInsets.symmetric(horizontal: KSpacing.verySmall),
+        ),
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(EBorderRadius.s32.value),
+            borderRadius: BorderRadius.circular(KBorderRadius.s32),
             side: const BorderSide(color: Colors.white),
           ),
         ),

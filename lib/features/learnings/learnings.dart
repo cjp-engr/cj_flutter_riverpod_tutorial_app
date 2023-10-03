@@ -1,5 +1,6 @@
-import 'package:cj_flutter_riverpod_tutorial_app/common/enums/font_size.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/common/enums/icon_size.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/font_size.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/icon_size.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/spacing.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/app_bar.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/features/learnings/view/widgets/categories_button.dart';
@@ -15,7 +16,7 @@ class LearningsPage extends StatelessWidget {
       title: _displayTitle(),
       actions: _actionsList(),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
+        padding: const EdgeInsets.symmetric(horizontal: KSpacing.verySmall),
         child: Column(
           children: [
             const Center(
@@ -52,13 +53,13 @@ class LearningsPage extends StatelessWidget {
 
   Widget _displayTitle() {
     return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 8),
+      padding: EdgeInsets.symmetric(horizontal: KSpacing.verySmall),
       child: SizedBox(
         width: double.infinity,
         child: TutorialText(
           text: 'My Courses',
           fontWeight: FontWeight.bold,
-          fontSize: EFontSize.s16,
+          fontSize: KFontSize.s16,
           textAlign: TextAlign.start,
         ),
       ),
@@ -68,11 +69,11 @@ class LearningsPage extends StatelessWidget {
   List<Widget> _actionsList() {
     return [
       Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8),
+        padding: const EdgeInsets.symmetric(vertical: KSpacing.verySmall),
         child: IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.search,
-            size: EIconSize.large.value,
+            size: KIconSize.s30,
             color: Colors.white,
           ),
           onPressed: () {
@@ -81,11 +82,11 @@ class LearningsPage extends StatelessWidget {
         ),
       ),
       Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8),
+        padding: const EdgeInsets.symmetric(vertical: KSpacing.verySmall),
         child: IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.shopping_cart,
-            size: EIconSize.large.value,
+            size: KIconSize.s30,
             color: Colors.white,
           ),
           onPressed: () {

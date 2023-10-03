@@ -1,5 +1,5 @@
 import 'package:cj_flutter_riverpod_tutorial_app/common/auth_checker/auth_checker.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/common/enums/font_size.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/font_size.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/routes/app_routes_names.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/utils/icon_res.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/app_bar.dart';
@@ -28,7 +28,7 @@ class _LoginRegisterPageState extends ConsumerState<LoginRegisterPage> {
           TutorialText(
             text: hasAcc ? 'Sign In' : 'Sign Up',
             fontWeight: FontWeight.bold,
-            fontSize: EFontSize.s24,
+            fontSize: KFontSize.s24,
           ),
           const SizedBox(height: 20),
           const Padding(
@@ -37,7 +37,7 @@ class _LoginRegisterPageState extends ConsumerState<LoginRegisterPage> {
               text:
                   'By using our services you are agreeing to our Terms and Privacy Statement',
               fontWeight: FontWeight.bold,
-              fontSize: EFontSize.s12,
+              fontSize: KFontSize.s12,
             ),
           ),
           const SizedBox(height: 100),
@@ -49,7 +49,7 @@ class _LoginRegisterPageState extends ConsumerState<LoginRegisterPage> {
               TutorialText(
                 text: hasAcc ? 'New here?' : 'Already have an account?',
                 fontWeight: FontWeight.bold,
-                fontSize: EFontSize.s12,
+                fontSize: KFontSize.s12,
               ),
               const SizedBox(width: 2),
               const TextLoginRegister(),

@@ -1,11 +1,11 @@
-import 'package:cj_flutter_riverpod_tutorial_app/common/enums/font_size.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/font_size.dart';
 import 'package:flutter/material.dart';
 
 class TutorialText extends StatelessWidget {
   final String text;
   final FontWeight? fontWeight;
   final TextAlign textAlign;
-  final EFontSize fontSize;
+  final double fontSize;
   final Color color;
   final TextStyle? style;
 
@@ -14,7 +14,7 @@ class TutorialText extends StatelessWidget {
     this.text = "",
     this.fontWeight = FontWeight.normal,
     this.textAlign = TextAlign.center,
-    this.fontSize = EFontSize.s12,
+    this.fontSize = KFontSize.s12,
     this.color = Colors.white,
     this.style,
   }) : super(key: key);
@@ -26,7 +26,7 @@ class TutorialText extends StatelessWidget {
       textAlign: textAlign,
       style: style ??
           TextStyle(
-            fontSize: fontSize.value,
+            fontSize: fontSize,
             fontWeight: fontWeight,
             color: color,
           ),

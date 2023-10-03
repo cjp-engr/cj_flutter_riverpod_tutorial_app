@@ -1,11 +1,12 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:cj_flutter_riverpod_tutorial_app/common/auth_checker/auth_checker.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/border_radius.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/font_size.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/enums/button_type.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/spacing.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/buttons.dart';
 import 'package:flutter/material.dart';
 
-import 'package:cj_flutter_riverpod_tutorial_app/common/enums/border_radius.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/common/enums/font_size.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -33,7 +34,7 @@ class LoginRegister extends StatelessWidget {
           style: ButtonStyle(
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(EBorderRadius.s4.value),
+                borderRadius: BorderRadius.circular(KBorderRadius.s4),
                 side: const BorderSide(color: Colors.white),
               ),
             ),
@@ -42,14 +43,14 @@ class LoginRegister extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 12),
+                padding: const EdgeInsets.symmetric(vertical: KSpacing.small),
                 child: Image.asset(icon, color: btnColor),
               ),
               const SizedBox(width: 15),
               TutorialText(
                 text: text,
                 fontWeight: FontWeight.bold,
-                fontSize: EFontSize.s12,
+                fontSize: KFontSize.s12,
               ),
             ],
           ),

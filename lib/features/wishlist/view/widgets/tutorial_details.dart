@@ -1,6 +1,7 @@
-import 'package:cj_flutter_riverpod_tutorial_app/common/enums/border_radius.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/common/enums/font_size.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/common/enums/icon_size.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/border_radius.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/font_size.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/icon_size.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/spacing.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/utils/random_generator.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 import 'package:flutter/material.dart';
@@ -11,13 +12,13 @@ class WishListTutorialDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 8),
+      padding: const EdgeInsets.only(top: KSpacing.verySmall),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _displayImage(),
           Padding(
-            padding: const EdgeInsets.only(left: 8, top: 5),
+            padding: const EdgeInsets.only(left: KSpacing.verySmall, top: 5),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -55,39 +56,39 @@ class WishListTutorialDetails extends StatelessWidget {
   }
 
   Widget _displayRating() {
-    return Row(
+    return const Row(
       children: [
-        const TutorialText(text: '4.7'),
-        const SizedBox(width: 2),
+        TutorialText(text: '4.7'),
+        SizedBox(width: 2),
         Row(
           children: [
-            Icon(Icons.star, size: EIconSize.verySmall.value),
-            Icon(Icons.star, size: EIconSize.verySmall.value),
-            Icon(Icons.star, size: EIconSize.verySmall.value),
-            Icon(Icons.star, size: EIconSize.verySmall.value),
-            Icon(Icons.star_border_outlined, size: EIconSize.verySmall.value)
+            Icon(Icons.star, size: KIconSize.s14),
+            Icon(Icons.star, size: KIconSize.s14),
+            Icon(Icons.star, size: KIconSize.s14),
+            Icon(Icons.star, size: KIconSize.s14),
+            Icon(Icons.star_border_outlined, size: KIconSize.s14)
           ],
         ),
-        const SizedBox(width: 2),
-        const TutorialText(text: '(188,327)'),
+        SizedBox(width: 2),
+        TutorialText(text: '(188,327)'),
       ],
     );
   }
 
   Widget _displayPrice() {
-    return Row(
+    return const Row(
       children: [
-        const TutorialText(
+        TutorialText(
           text: '\$3,790.50',
           textAlign: TextAlign.start,
           fontWeight: FontWeight.w900,
         ),
-        const SizedBox(width: 5),
+        SizedBox(width: 5),
         TutorialText(
           text: '\$5,790.50',
           style: TextStyle(
             decoration: TextDecoration.lineThrough,
-            fontSize: EFontSize.s10.value,
+            fontSize: KFontSize.s10,
             color: Colors.grey,
           ),
         )
@@ -102,10 +103,10 @@ class WishListTutorialDetails extends StatelessWidget {
         const SizedBox(height: 5),
         Container(
           padding: const EdgeInsets.all(5.0),
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.amber,
             borderRadius: BorderRadius.all(
-              Radius.circular(EBorderRadius.s4.value),
+              Radius.circular(KBorderRadius.s4),
             ),
           ),
           child: const TutorialText(

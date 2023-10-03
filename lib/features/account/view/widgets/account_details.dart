@@ -1,5 +1,5 @@
-import 'package:cj_flutter_riverpod_tutorial_app/common/enums/font_size.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/common/enums/icon_size.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/font_size.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/icon_size.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/utils/icon_res.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +30,7 @@ class AccountDetails extends StatelessWidget {
   Widget _displayName() {
     return const TutorialText(
       text: 'Carmen Joy Palsario',
-      fontSize: EFontSize.s16,
+      fontSize: KFontSize.s16,
       fontWeight: FontWeight.w900,
     );
   }
@@ -41,12 +41,12 @@ class AccountDetails extends StatelessWidget {
       children: [
         Image.asset(
           IconRes.googleIcon,
-          width: EIconSize.large.value,
+          width: KIconSize.s30,
         ),
         const SizedBox(width: 10),
         const TutorialText(
           text: 'ceejee121@gmail.com',
-          fontSize: EFontSize.s12,
+          fontSize: KFontSize.s12,
           fontWeight: FontWeight.normal,
         )
       ],

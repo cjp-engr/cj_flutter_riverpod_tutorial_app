@@ -1,4 +1,5 @@
-import 'package:cj_flutter_riverpod_tutorial_app/common/enums/border_radius.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/border_radius.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/spacing.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/utils/random_generator.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 import 'package:flutter/material.dart';
@@ -10,13 +11,13 @@ class LearningsTutorialDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     final progressInd = generateRandomInt();
     return Padding(
-      padding: const EdgeInsets.only(top: 8),
+      padding: const EdgeInsets.only(top: KSpacing.verySmall),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _displayImage(),
           Padding(
-            padding: const EdgeInsets.only(left: 8, top: 5),
+            padding: const EdgeInsets.only(left: KSpacing.verySmall, top: 5),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -25,7 +26,7 @@ class LearningsTutorialDetails extends StatelessWidget {
                 _displayAuthor(),
                 const SizedBox(height: 5),
                 _displayProgress(progressInd),
-                const SizedBox(height: 12),
+                const SizedBox(height: KSpacing.small),
                 _displayPercentComplete(progressInd),
               ],
             ),
@@ -60,7 +61,7 @@ class LearningsTutorialDetails extends StatelessWidget {
           width: 300,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(
-              EBorderRadius.s2.value,
+              KBorderRadius.s2,
             ),
             color: Colors.white,
           ),
@@ -70,7 +71,7 @@ class LearningsTutorialDetails extends StatelessWidget {
           width: 300 * progressInd.toDouble() / 100.00,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(
-              EBorderRadius.s2.value,
+              KBorderRadius.s2,
             ),
             color: Colors.amber,
           ),

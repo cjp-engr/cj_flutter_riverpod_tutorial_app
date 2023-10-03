@@ -1,3 +1,0 @@
-class Constansts {
-  Constansts._();
-}

@@ -1,4 +1,5 @@
 import 'package:cj_flutter_riverpod_tutorial_app/common/enums/button_type.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/spacing.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/buttons.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class FeaturedWelcome extends StatelessWidget {
             onPressed: () {},
             style: TextButton.styleFrom(
               shape: const CircleBorder(),
-              padding: const EdgeInsets.all(12),
+              padding: const EdgeInsets.all(KSpacing.small),
               side: const BorderSide(color: Colors.white),
             ),
             child: const Icon(Icons.person_outline, color: Colors.white),

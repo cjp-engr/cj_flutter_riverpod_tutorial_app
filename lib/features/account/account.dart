@@ -1,4 +1,5 @@
-import 'package:cj_flutter_riverpod_tutorial_app/common/enums/font_size.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/font_size.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/spacing.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/app_bar.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/features/account/view/widgets/account_details.dart';
@@ -28,7 +29,7 @@ class AccountPage extends StatelessWidget {
               AccountButton(text: 'Become an Instructor'),
               SizedBox(height: 20),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10),
+                padding: EdgeInsets.symmetric(horizontal: KSpacing.verySmall),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -72,13 +73,13 @@ class AccountPage extends StatelessWidget {
 
   Widget _displayTitle() {
     return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 8),
+      padding: EdgeInsets.symmetric(horizontal: KSpacing.verySmall),
       child: SizedBox(
         width: double.infinity,
         child: TutorialText(
           text: 'Account',
           fontWeight: FontWeight.bold,
-          fontSize: EFontSize.s16,
+          fontSize: KFontSize.s16,
           textAlign: TextAlign.start,
         ),
       ),

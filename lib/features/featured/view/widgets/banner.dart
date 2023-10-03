@@ -1,4 +1,5 @@
 import 'package:cj_flutter_riverpod_tutorial_app/common/enums/button_type.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/spacing.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/utils/image_res.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/buttons.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/dots_indicator.dart';
@@ -66,7 +67,8 @@ class FeaturedBanner extends StatelessWidget {
           child: Align(
             alignment: Alignment.topRight,
             child: Padding(
-              padding: EdgeInsets.only(top: 8, right: 8),
+              padding: EdgeInsets.only(
+                  top: KSpacing.verySmall, right: KSpacing.verySmall),
               child: TutorialButton(
                 text: 'X',
                 buttonType: EButtonType.tertiary,

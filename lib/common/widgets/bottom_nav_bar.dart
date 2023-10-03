@@ -1,11 +1,11 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:cj_flutter_riverpod_tutorial_app/common/enums/font_size.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/common/enums/icon_size.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/border_radius.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/font_size.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/icon_size.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/routes/app_routes_names.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 import 'package:flutter/material.dart';
 
-import 'package:cj_flutter_riverpod_tutorial_app/common/enums/border_radius.dart';
 import 'package:go_router/go_router.dart';
 
 class BottomNavBar extends StatelessWidget {
@@ -69,7 +69,7 @@ class BottomNavButton extends StatelessWidget {
       style: ButtonStyle(
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(EBorderRadius.s4.value),
+            borderRadius: BorderRadius.circular(KBorderRadius.s4),
           ),
         ),
       ),
@@ -79,11 +79,11 @@ class BottomNavButton extends StatelessWidget {
           Icon(
             icon,
             color: Colors.white,
-            size: EIconSize.large.value,
+            size: KIconSize.s30,
           ),
           TutorialText(
             text: text,
-            fontSize: EFontSize.s10,
+            fontSize: KFontSize.s10,
             fontWeight: FontWeight.bold,
           )
         ],

@@ -1,4 +1,5 @@
 import 'package:cj_flutter_riverpod_tutorial_app/common/enums/button_type.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/spacing.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/utils/random_generator.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/buttons.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
@@ -31,7 +32,7 @@ class TopSearches extends StatelessWidget {
     return Align(
       alignment: Alignment.topLeft,
       child: Wrap(
-        spacing: 12,
+        spacing: KSpacing.small,
         runSpacing: 3,
         children: List.generate(7, (index) {
           return TutorialButton(

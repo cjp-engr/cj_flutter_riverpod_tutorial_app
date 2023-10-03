@@ -1,4 +1,5 @@
-import 'package:cj_flutter_riverpod_tutorial_app/common/enums/icon_size.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/icon_size.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/spacing.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/utils/random_generator.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 import 'package:flutter/material.dart';
@@ -30,14 +31,14 @@ class BrowseCategories extends StatelessWidget {
         20,
         (index) {
           return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12),
+            padding: const EdgeInsets.symmetric(vertical: KSpacing.small),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TutorialText(text: generateRandomString()),
-                Icon(
+                const Icon(
                   Icons.arrow_forward_ios,
-                  size: EIconSize.small.value,
+                  size: KIconSize.s17,
                 )
               ],
             ),

@@ -1,9 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:cj_flutter_riverpod_tutorial_app/common/auth_checker/auth_checker.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/icon_size.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/spacing.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 
-import 'package:cj_flutter_riverpod_tutorial_app/common/enums/icon_size.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
@@ -38,11 +39,11 @@ class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
     return actions.isEmpty
         ? [
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8),
+              padding: const EdgeInsets.symmetric(vertical: KSpacing.verySmall),
               child: IconButton(
-                icon: Icon(
+                icon: const Icon(
                   Icons.shopping_cart,
-                  size: EIconSize.large.value,
+                  size: KIconSize.s30,
                   color: Colors.white,
                 ),
                 onPressed: () {

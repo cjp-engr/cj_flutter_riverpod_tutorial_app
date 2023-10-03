@@ -1,4 +1,4 @@
-import 'package:cj_flutter_riverpod_tutorial_app/common/enums/font_size.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/font_size.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 import 'package:flutter/material.dart';
 
@@ -22,14 +22,14 @@ class WelcomeWidgets extends StatelessWidget {
           children: [
             TutorialText(
               text: header,
-              fontSize: EFontSize.s20,
+              fontSize: KFontSize.s20,
             ),
             const SizedBox(height: 10),
             SizedBox(
               width: 300,
               child: TutorialText(
                 text: subHeader,
-                fontSize: EFontSize.s12,
+                fontSize: KFontSize.s12,
               ),
             ),
           ],
