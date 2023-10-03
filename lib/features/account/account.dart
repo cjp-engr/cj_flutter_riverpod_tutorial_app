@@ -15,57 +15,51 @@ class AccountPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomAppBar(
       title: _displayTitle(),
-      body: NotificationListener<OverscrollIndicatorNotification>(
-        onNotification: (OverscrollIndicatorNotification overscroll) {
-          overscroll.disallowIndicator();
-          return false;
-        },
-        child: const SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(height: 40),
-              AccountDetails(),
-              SizedBox(height: 20),
-              AccountButton(text: 'Become an Instructor'),
-              SizedBox(height: 20),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: KSpacing.verySmall),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SettingsTitle(text: 'Video Preferences'),
-                    SettingsOption(text: 'Download options'),
-                    SettingsOption(text: 'Video playback options'),
-                    SizedBox(height: 20),
-                    SettingsTitle(text: 'Account settings'),
-                    SettingsOption(text: 'Career goals'),
-                    SettingsOption(text: 'Account security'),
-                    SettingsOption(text: 'Email notification preferences'),
-                    SettingsOption(text: 'Learning reminders'),
-                    SizedBox(height: 20),
-                    SettingsTitle(text: 'Help and Support'),
-                    SettingsOption(text: 'About Udemy'),
-                    SettingsOption(text: 'About Udemy Business'),
-                    SettingsOption(text: 'Frequently asked questions'),
-                    SettingsOption(text: 'Share the Udemy app'),
-                    SizedBox(height: 20),
-                    SettingsTitle(text: 'Diagnostics'),
-                    SettingsOption(text: 'Status'),
-                  ],
-                ),
-              ),
-              Column(
+      body: const SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height: 40),
+            AccountDetails(),
+            SizedBox(height: 20),
+            AccountButton(text: 'Become an Instructor'),
+            SizedBox(height: 20),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: KSpacing.verySmall),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  SettingsTitle(text: 'Video Preferences'),
+                  SettingsOption(text: 'Download options'),
+                  SettingsOption(text: 'Video playback options'),
                   SizedBox(height: 20),
-                  AccountButton(
-                    text: 'Sign out',
-                    isSignOut: true,
-                  ),
-                  SizedBox(height: 40),
+                  SettingsTitle(text: 'Account settings'),
+                  SettingsOption(text: 'Career goals'),
+                  SettingsOption(text: 'Account security'),
+                  SettingsOption(text: 'Email notification preferences'),
+                  SettingsOption(text: 'Learning reminders'),
+                  SizedBox(height: 20),
+                  SettingsTitle(text: 'Help and Support'),
+                  SettingsOption(text: 'About Udemy'),
+                  SettingsOption(text: 'About Udemy Business'),
+                  SettingsOption(text: 'Frequently asked questions'),
+                  SettingsOption(text: 'Share the Udemy app'),
+                  SizedBox(height: 20),
+                  SettingsTitle(text: 'Diagnostics'),
+                  SettingsOption(text: 'Status'),
                 ],
-              )
-            ],
-          ),
+              ),
+            ),
+            Column(
+              children: [
+                SizedBox(height: 20),
+                AccountButton(
+                  text: 'Sign out',
+                  isSignOut: true,
+                ),
+                SizedBox(height: 40),
+              ],
+            )
+          ],
         ),
       ),
     );

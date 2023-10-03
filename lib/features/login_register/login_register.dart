@@ -20,6 +20,7 @@ class _LoginRegisterPageState extends ConsumerState<LoginRegisterPage> {
   @override
   Widget build(BuildContext context) {
     final bool hasAcc = ref.watch(authCheckerProvider).hasAccount;
+    print(hasAcc);
     return CustomAppBar(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),

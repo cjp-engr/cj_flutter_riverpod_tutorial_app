@@ -30,7 +30,12 @@ class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
         ),
         bottomNavigationBar:
             isAuthenticated ? const BottomNavBar() : const SizedBox(),
-        body: body,
+        body: NotificationListener<OverscrollIndicatorNotification>(
+            onNotification: (OverscrollIndicatorNotification overscroll) {
+              overscroll.disallowIndicator();
+              return false;
+            },
+            child: body),
       ),
     );
   }

@@ -74,7 +74,7 @@ class _TextLoginRegisterState extends ConsumerState<TextLoginRegister> {
   Widget build(BuildContext context) {
     final bool hasAcc = ref.watch(authCheckerProvider).hasAccount;
     return TutorialButton(
-        text: hasAcc ? 'Log in' : 'Create an account',
+        text: !hasAcc ? 'Log in' : 'Create an account',
         buttonType: EButtonType.tertiary,
         onPressed: () =>
             ref.read(authCheckerProvider.notifier).onHasAccountCheck(!hasAcc));

@@ -11,29 +11,23 @@ class FeaturedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomAppBar(
-      body: NotificationListener<OverscrollIndicatorNotification>(
-        onNotification: (OverscrollIndicatorNotification overscroll) {
-          overscroll.disallowIndicator();
-          return false;
-        },
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const FeaturedWelcome(),
-              const SizedBox(height: 10),
-              FeaturedBanner(),
-              const SizedBox(height: 10),
-              const FeaturedCategories(),
-              const SizedBox(height: 10),
-              const TutorialsListDetails(),
-              const SizedBox(height: 10),
-              const TutorialsListDetails(),
-              const SizedBox(height: 10),
-              const TutorialsListDetails(),
-              const SizedBox(height: 10),
-              const TutorialsListDetails(),
-            ],
-          ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const FeaturedWelcome(),
+            const SizedBox(height: 10),
+            FeaturedBanner(),
+            const SizedBox(height: 10),
+            const FeaturedCategories(),
+            const SizedBox(height: 10),
+            const TutorialsListDetails(),
+            const SizedBox(height: 10),
+            const TutorialsListDetails(),
+            const SizedBox(height: 10),
+            const TutorialsListDetails(),
+            const SizedBox(height: 10),
+            const TutorialsListDetails(),
+          ],
         ),
       ),
     );

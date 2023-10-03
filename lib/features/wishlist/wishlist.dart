@@ -12,24 +12,18 @@ class WishListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomAppBar(
       title: _displayTitle(),
-      body: NotificationListener<OverscrollIndicatorNotification>(
-        onNotification: (OverscrollIndicatorNotification overscroll) {
-          overscroll.disallowIndicator();
-          return false;
-        },
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: KSpacing.verySmall),
-            child: Column(
-              children: [
-                ...List.generate(
-                  20,
-                  (index) {
-                    return const WishListTutorialDetails();
-                  },
-                ),
-              ],
-            ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: KSpacing.verySmall),
+          child: Column(
+            children: [
+              ...List.generate(
+                20,
+                (index) {
+                  return const WishListTutorialDetails();
+                },
+              ),
+            ],
           ),
         ),
       ),

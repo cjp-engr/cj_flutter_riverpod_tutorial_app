@@ -3,7 +3,7 @@ class AuthState {
   final bool isAuthenticated;
   final bool hasAccount;
 
-  AuthState({this.isAuthenticated = false, this.hasAccount = false});
+  AuthState({this.isAuthenticated = false, this.hasAccount = true});
 
   AuthState copyWith({
     bool? isAuthenticated,

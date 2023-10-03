@@ -9,23 +9,17 @@ class SearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomAppBar(
-      title: const CustomSearchBar(),
-      body: NotificationListener<OverscrollIndicatorNotification>(
-        onNotification: (OverscrollIndicatorNotification overscroll) {
-          overscroll.disallowIndicator();
-          return false;
-        },
-        child: const SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            child: Column(
-              children: [
-                TopSearches(),
-                SizedBox(height: 20),
-                BrowseCategories(),
-              ],
-            ),
+    return const CustomAppBar(
+      title: CustomSearchBar(),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          child: Column(
+            children: [
+              TopSearches(),
+              SizedBox(height: 20),
+              BrowseCategories(),
+            ],
           ),
         ),
       ),
