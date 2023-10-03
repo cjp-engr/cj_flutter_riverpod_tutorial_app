@@ -21,7 +21,7 @@ class TutorialsListDetails extends StatelessWidget {
 
   Widget _headerDisplay() {
     return const Padding(
-      padding: EdgeInsets.all(KSpacing.verySmall),
+      padding: EdgeInsets.all(KSpacing.s8),
       child: TutorialText(
         text: 'Popular for Web Developer',
         fontSize: KFontSize.s24,
@@ -39,7 +39,7 @@ class TutorialsListDetails extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: 5,
         itemBuilder: (context, index) => Padding(
-          padding: const EdgeInsets.all(KSpacing.verySmall),
+          padding: const EdgeInsets.all(KSpacing.s8),
           child: SizedBox(
             width: 180,
             child: Column(
@@ -66,7 +66,7 @@ class TutorialsListDetails extends StatelessWidget {
 
   Widget _title() {
     return const Padding(
-      padding: EdgeInsets.only(right: KSpacing.verySmall),
+      padding: EdgeInsets.only(right: KSpacing.s8),
       child: TutorialText(
         text: 'Lorem Ipsum has been the industry\'s standard',
         textAlign: TextAlign.start,
@@ -77,7 +77,7 @@ class TutorialsListDetails extends StatelessWidget {
 
   Widget _instructorName() {
     return const Padding(
-      padding: EdgeInsets.only(right: KSpacing.verySmall),
+      padding: EdgeInsets.only(right: KSpacing.s8),
       child: TutorialText(
         text: 'Hello Worlddd',
         textAlign: TextAlign.start,

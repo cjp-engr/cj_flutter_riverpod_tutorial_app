@@ -22,7 +22,7 @@ class FeaturedCategories extends StatelessWidget {
 
   Widget _headerDisplay() {
     return const Padding(
-      padding: EdgeInsets.all(KSpacing.verySmall),
+      padding: EdgeInsets.all(KSpacing.s8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -42,7 +42,7 @@ class FeaturedCategories extends StatelessWidget {
 
   Widget _categoriesList(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: KSpacing.verySmall),
+      padding: const EdgeInsets.symmetric(horizontal: KSpacing.s8),
       child: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
         child: ConstrainedBox(
@@ -51,7 +51,7 @@ class FeaturedCategories extends StatelessWidget {
             maxWidth: MediaQuery.of(context).size.height * 1,
           ),
           child: Wrap(
-            spacing: KSpacing.small,
+            spacing: KSpacing.s12,
             runSpacing: 2,
             children: List.generate(
               12,

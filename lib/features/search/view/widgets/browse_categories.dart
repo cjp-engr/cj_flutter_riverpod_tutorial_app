@@ -31,7 +31,7 @@ class BrowseCategories extends StatelessWidget {
         20,
         (index) {
           return Padding(
-            padding: const EdgeInsets.symmetric(vertical: KSpacing.small),
+            padding: const EdgeInsets.symmetric(vertical: KSpacing.s12),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

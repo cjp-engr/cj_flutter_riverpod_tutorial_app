@@ -11,13 +11,13 @@ class LearningsTutorialDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     final progressInd = generateRandomInt();
     return Padding(
-      padding: const EdgeInsets.only(top: KSpacing.verySmall),
+      padding: const EdgeInsets.only(top: KSpacing.s8),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _displayImage(),
           Padding(
-            padding: const EdgeInsets.only(left: KSpacing.verySmall, top: 5),
+            padding: const EdgeInsets.only(left: KSpacing.s8, top: 5),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -26,7 +26,7 @@ class LearningsTutorialDetails extends StatelessWidget {
                 _displayAuthor(),
                 const SizedBox(height: 5),
                 _displayProgress(progressInd),
-                const SizedBox(height: KSpacing.small),
+                const SizedBox(height: KSpacing.s12),
                 _displayPercentComplete(progressInd),
               ],
             ),
@@ -38,7 +38,7 @@ class LearningsTutorialDetails extends StatelessWidget {
 
   Widget _displayImage() {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(5),
+      borderRadius: BorderRadius.circular(KBorderRadius.s4),
       child: Image.network('https://picsum.photos/60/60'),
     );
   }

@@ -18,7 +18,7 @@ class FeaturedWelcome extends StatelessWidget {
             onPressed: () {},
             style: TextButton.styleFrom(
               shape: const CircleBorder(),
-              padding: const EdgeInsets.all(KSpacing.small),
+              padding: const EdgeInsets.all(KSpacing.s12),
               side: const BorderSide(color: Colors.white),
             ),
             child: const Icon(Icons.person_outline, color: Colors.white),

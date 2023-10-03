@@ -24,7 +24,7 @@ class AccountPage extends StatelessWidget {
             AccountButton(text: 'Become an Instructor'),
             SizedBox(height: 20),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: KSpacing.verySmall),
+              padding: EdgeInsets.symmetric(horizontal: KSpacing.s8),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -67,7 +67,7 @@ class AccountPage extends StatelessWidget {
 
   Widget _displayTitle() {
     return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: KSpacing.verySmall),
+      padding: EdgeInsets.symmetric(horizontal: KSpacing.s8),
       child: SizedBox(
         width: double.infinity,
         child: TutorialText(

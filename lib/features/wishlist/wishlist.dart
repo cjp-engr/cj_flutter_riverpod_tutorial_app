@@ -14,7 +14,7 @@ class WishListPage extends StatelessWidget {
       title: _displayTitle(),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: KSpacing.verySmall),
+          padding: const EdgeInsets.symmetric(horizontal: KSpacing.s8),
           child: Column(
             children: [
               ...List.generate(
@@ -32,7 +32,7 @@ class WishListPage extends StatelessWidget {
 
   Widget _displayTitle() {
     return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: KSpacing.verySmall),
+      padding: EdgeInsets.symmetric(horizontal: KSpacing.s8),
       child: SizedBox(
         width: double.infinity,
         child: TutorialText(

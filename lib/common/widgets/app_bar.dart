@@ -2,10 +2,12 @@
 import 'package:cj_flutter_riverpod_tutorial_app/common/auth_checker/auth_checker.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/constants/icon_size.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/constants/spacing.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/routes/app_routes_names.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
   final Widget title;
@@ -26,7 +28,7 @@ class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
         appBar: AppBar(
           titleSpacing: 0,
           title: title,
-          actions: isAuthenticated ? _actionsDefault() : [],
+          actions: isAuthenticated ? _actionsDefault(context) : [],
         ),
         bottomNavigationBar:
             isAuthenticated ? const BottomNavBar() : const SizedBox(),
@@ -40,20 +42,18 @@ class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
     );
   }
 
-  List<Widget> _actionsDefault() {
+  List<Widget> _actionsDefault(BuildContext context) {
     return actions.isEmpty
         ? [
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: KSpacing.verySmall),
+              padding: const EdgeInsets.symmetric(vertical: KSpacing.s8),
               child: IconButton(
                 icon: const Icon(
                   Icons.shopping_cart,
                   size: KIconSize.s30,
                   color: Colors.white,
                 ),
-                onPressed: () {
-                  // handle the press
-                },
+                onPressed: () => context.go(AppRoutesNames.cart),
               ),
             ),
           ]

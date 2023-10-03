@@ -43,7 +43,7 @@ class LoginRegister extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: KSpacing.small),
+                padding: const EdgeInsets.symmetric(vertical: KSpacing.s12),
                 child: Image.asset(icon, color: btnColor),
               ),
               const SizedBox(width: 15),

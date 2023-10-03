@@ -148,7 +148,7 @@ class _CategoryButton extends StatelessWidget {
     return ElevatedButton(
       style: ButtonStyle(
         padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-          const EdgeInsets.symmetric(horizontal: KSpacing.verySmall),
+          const EdgeInsets.symmetric(horizontal: KSpacing.s8),
         ),
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(

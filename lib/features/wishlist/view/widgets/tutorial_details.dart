@@ -12,13 +12,13 @@ class WishListTutorialDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: KSpacing.verySmall),
+      padding: const EdgeInsets.only(top: KSpacing.s8),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           _displayImage(),
           Padding(
-            padding: const EdgeInsets.only(left: KSpacing.verySmall, top: 5),
+            padding: const EdgeInsets.only(left: KSpacing.s8, top: 5),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

@@ -11,7 +11,7 @@ class DotsIndicator extends StatelessWidget {
     Key? key,
     required this.controller,
     required this.count,
-    this.dotHeight = KSpacing.verySmall,
+    this.dotHeight = KSpacing.s8,
   }) : super(key: key);
 
   @override

@@ -32,7 +32,7 @@ class TopSearches extends StatelessWidget {
     return Align(
       alignment: Alignment.topLeft,
       child: Wrap(
-        spacing: KSpacing.small,
+        spacing: KSpacing.s12,
         runSpacing: 3,
         children: List.generate(7, (index) {
           return TutorialButton(

@@ -67,8 +67,7 @@ class FeaturedBanner extends StatelessWidget {
           child: Align(
             alignment: Alignment.topRight,
             child: Padding(
-              padding: EdgeInsets.only(
-                  top: KSpacing.verySmall, right: KSpacing.verySmall),
+              padding: EdgeInsets.only(top: KSpacing.s8, right: KSpacing.s8),
               child: TutorialButton(
                 text: 'X',
                 buttonType: EButtonType.tertiary,
