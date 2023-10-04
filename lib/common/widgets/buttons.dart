@@ -1,21 +1,23 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:cj_flutter_riverpod_tutorial_app/common/constants/border_radius.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/common/constants/spacing.dart';
 import 'package:flutter/material.dart';
 
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/border_radius.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/spacing.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/enums/button_type.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 
 class TutorialButton extends StatelessWidget {
   final EButtonType buttonType;
   final String? text;
+  final Widget? content;
   final Color? textColor;
   final VoidCallback? onPressed;
 
   const TutorialButton({
     Key? key,
     required this.buttonType,
-    this.text,
+    this.content,
+    this.text = '',
     this.textColor,
     this.onPressed,
   }) : super(key: key);
@@ -24,9 +26,9 @@ class TutorialButton extends StatelessWidget {
   Widget build(BuildContext context) {
     switch (buttonType) {
       case EButtonType.primary:
-        return _PrimaryButton(text: text, onPressed: onPressed);
+        return _PrimaryButton(content: content!, onPressed: onPressed);
       case EButtonType.secondary:
-        return _SecondaryButton(text: text, onPressed: onPressed);
+        return _SecondaryButton(content: content!, onPressed: onPressed);
       case EButtonType.tertiary:
         return _TertiaryButton(
             text: text!, textColor: textColor, onPressed: onPressed);
@@ -39,20 +41,19 @@ class TutorialButton extends StatelessWidget {
 }
 
 class _PrimaryButton extends StatelessWidget {
-  final String? text;
+  final Widget content;
   final VoidCallback? onPressed;
   const _PrimaryButton({
     Key? key,
-    this.text = '',
     this.onPressed,
+    required this.content,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: SizedBox(
-        height: 60,
-        child: ElevatedButton(
+    return SizedBox(
+      height: 60,
+      child: ElevatedButton(
           style: ButtonStyle(
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
@@ -62,44 +63,36 @@ class _PrimaryButton extends StatelessWidget {
             ),
           ),
           onPressed: onPressed,
-          child: TutorialText(
-            text: text!,
-          ),
-        ),
-      ),
+          child: content),
     );
   }
 }
 
 class _SecondaryButton extends StatelessWidget {
-  final String? text;
+  final Widget content;
   final VoidCallback? onPressed;
   const _SecondaryButton({
     Key? key,
-    this.text = '',
+    required this.content,
     this.onPressed,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: SizedBox(
-        height: 60,
-        child: ElevatedButton(
-          style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all<Color>(Colors.amber),
-            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-              RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(KBorderRadius.s4),
-                side: const BorderSide(color: Colors.amber),
-              ),
+    return SizedBox(
+      height: 60,
+      child: ElevatedButton(
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all<Color>(Colors.amber),
+          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(KBorderRadius.s4),
+              side: const BorderSide(color: Colors.amber),
             ),
           ),
-          onPressed: onPressed,
-          child: TutorialText(
-            text: text!,
-          ),
         ),
+        onPressed: onPressed,
+        child: content,
       ),
     );
   }

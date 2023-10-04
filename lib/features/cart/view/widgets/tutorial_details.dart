@@ -32,7 +32,7 @@ class CartTutorialDetails extends StatelessWidget {
                 Row(
                   children: [
                     _addToCartButton(),
-                    const SizedBox(width: KSpacing.s12),
+                    const SizedBox(width: KSpacing.s18),
                     _removeButton(),
                   ],
                 ),

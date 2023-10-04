@@ -4,6 +4,7 @@ import 'package:cj_flutter_riverpod_tutorial_app/common/utils/image_res.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/app_bar.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/buttons.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/dots_indicator.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/features/welcome/view/widgets/welcome_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -35,15 +36,19 @@ class WelcomePage extends StatelessWidget {
           Row(
             children: [
               const SizedBox(width: 10),
-              const TutorialButton(
-                text: 'Browse',
-                buttonType: EButtonType.secondary,
+              const Expanded(
+                child: TutorialButton(
+                  content: TutorialText(text: 'Browse'),
+                  buttonType: EButtonType.secondary,
+                ),
               ),
               const SizedBox(width: 10),
-              TutorialButton(
-                text: 'Sign in',
-                onPressed: () => context.go(AppRoutesNames.login),
-                buttonType: EButtonType.primary,
+              Expanded(
+                child: TutorialButton(
+                  content: const TutorialText(text: 'Sign in'),
+                  onPressed: () => context.go(AppRoutesNames.login),
+                  buttonType: EButtonType.primary,
+                ),
               ),
               const SizedBox(width: 10),
             ],
