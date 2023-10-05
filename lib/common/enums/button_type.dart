@@ -1,1 +1,1 @@
-enum EButtonType { primary, secondary, tertiary, category }
+enum EButtonType { primary, secondary, tertiary, category, icon }

@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:cj_flutter_riverpod_tutorial_app/common/constants/border_radius.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/icon_size.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/constants/spacing.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/enums/button_type.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
@@ -11,6 +12,7 @@ class TutorialButton extends StatelessWidget {
   final String? text;
   final Widget? content;
   final Color? textColor;
+  final IconData? icon;
   final VoidCallback? onPressed;
 
   const TutorialButton({
@@ -19,6 +21,7 @@ class TutorialButton extends StatelessWidget {
     this.content,
     this.text = '',
     this.textColor,
+    this.icon,
     this.onPressed,
   }) : super(key: key);
 
@@ -34,6 +37,9 @@ class TutorialButton extends StatelessWidget {
             text: text!, textColor: textColor, onPressed: onPressed);
       case EButtonType.category:
         return _CategoryButton(text: text, onPressed: onPressed);
+      case EButtonType.icon:
+        return _IconButton(icon: icon!);
+
       default:
         return const Placeholder();
     }
@@ -155,6 +161,26 @@ class _CategoryButton extends StatelessWidget {
       ),
       onPressed: () {},
       child: TutorialText(text: text!, fontWeight: FontWeight.bold),
+    );
+  }
+}
+
+class _IconButton extends StatelessWidget {
+  final IconData icon;
+  const _IconButton({
+    Key? key,
+    required this.icon,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      icon: Icon(
+        icon,
+        size: KIconSize.s30,
+        color: Colors.white,
+      ),
+      onPressed: () {},
     );
   }
 }

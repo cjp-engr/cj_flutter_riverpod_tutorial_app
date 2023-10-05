@@ -46,7 +46,9 @@ class WelcomePage extends StatelessWidget {
               Expanded(
                 child: TutorialButton(
                   content: const TutorialText(text: 'Sign in'),
-                  onPressed: () => context.go(AppRoutesNames.login),
+                  onPressed: () {
+                    context.go(AppRoutesNames.login);
+                  },
                   buttonType: EButtonType.primary,
                 ),
               ),

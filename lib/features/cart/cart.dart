@@ -1,4 +1,5 @@
 import 'package:cj_flutter_riverpod_tutorial_app/common/constants/font_size.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/constants/icon_size.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/constants/spacing.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/app_bar.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
@@ -12,6 +13,14 @@ class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomAppBar(
+      leading: IconButton(
+        icon: const Icon(
+          Icons.arrow_back_ios,
+          size: KIconSize.s30,
+          color: Colors.white,
+        ),
+        onPressed: () {},
+      ),
       title: _displayTitle(),
       actions: const [SizedBox()],
       body: const SingleChildScrollView(

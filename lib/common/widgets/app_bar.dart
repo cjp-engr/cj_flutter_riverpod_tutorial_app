@@ -12,10 +12,12 @@ import 'package:go_router/go_router.dart';
 class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
   final Widget title;
   final Widget body;
+  final Widget? leading;
   final List<Widget> actions;
   const CustomAppBar({
     Key? key,
     this.title = const SizedBox(),
+    this.leading,
     this.actions = const [],
     required this.body,
   }) : super(key: key);
@@ -26,6 +28,8 @@ class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          leadingWidth: leading == null ? 0 : KSpacing.s30,
+          leading: leading,
           titleSpacing: 0,
           title: title,
           actions: isAuthenticated ? _actionsDefault(context) : [],
@@ -53,7 +57,9 @@ class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
                   size: KIconSize.s30,
                   color: Colors.white,
                 ),
-                onPressed: () => context.go(AppRoutesNames.cart),
+                onPressed: () {
+                  context.go(AppRoutesNames.cart);
+                },
               ),
             ),
           ]
