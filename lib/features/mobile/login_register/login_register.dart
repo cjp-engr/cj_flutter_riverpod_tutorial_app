@@ -4,7 +4,7 @@ import 'package:cj_flutter_riverpod_tutorial_app/common/routes/app_routes_names.
 import 'package:cj_flutter_riverpod_tutorial_app/common/utils/icon_res.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/app_bar.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/features/login_register/view/widgets/buttons.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/features/mobile/login_register/view/widgets/buttons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';

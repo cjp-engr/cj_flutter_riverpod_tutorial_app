@@ -12,12 +12,12 @@ import 'package:go_router/go_router.dart';
 class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
   final Widget title;
   final Widget body;
-  final Widget? leading;
+  final String? leadingPath;
   final List<Widget> actions;
   const CustomAppBar({
     Key? key,
     this.title = const SizedBox(),
-    this.leading,
+    this.leadingPath = '',
     this.actions = const [],
     required this.body,
   }) : super(key: key);
@@ -28,8 +28,8 @@ class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          leadingWidth: leading == null ? 0 : KSpacing.s30,
-          leading: leading,
+          leadingWidth: leadingPath!.isEmpty ? 0 : KSpacing.s30,
+          leading: _onBackDisplay(context),
           titleSpacing: 0,
           title: title,
           actions: isAuthenticated ? _actionsDefault(context) : [],
@@ -43,6 +43,17 @@ class CustomAppBar extends ConsumerWidget implements PreferredSizeWidget {
             },
             child: body),
       ),
+    );
+  }
+
+  Widget _onBackDisplay(BuildContext context) {
+    return IconButton(
+      icon: const Icon(
+        Icons.arrow_back_ios,
+        size: KIconSize.s30,
+        color: Colors.white,
+      ),
+      onPressed: () => leadingPath!.isEmpty ? null : context.go(leadingPath!),
     );
   }
 

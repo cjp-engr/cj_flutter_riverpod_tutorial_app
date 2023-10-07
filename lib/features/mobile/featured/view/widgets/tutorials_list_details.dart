@@ -1,9 +1,11 @@
 import 'package:cj_flutter_riverpod_tutorial_app/common/constants/border_radius.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/constants/font_size.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/constants/spacing.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/routes/app_routes_names.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/utils/random_generator.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class TutorialsListDetails extends StatelessWidget {
   const TutorialsListDetails({super.key});
@@ -38,20 +40,25 @@ class TutorialsListDetails extends StatelessWidget {
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         itemCount: 5,
-        itemBuilder: (context, index) => Padding(
-          padding: const EdgeInsets.all(KSpacing.s8),
-          child: SizedBox(
-            width: 180,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _image(),
-                _title(),
-                _instructorName(),
-                _ratingDetails(),
-                _price(),
-                generateRandomBool() ? _tag() : const SizedBox()
-              ],
+        itemBuilder: (context, index) => InkWell(
+          onTap: () {
+            context.go(AppRoutesNames.previewCourse);
+          },
+          child: Padding(
+            padding: const EdgeInsets.all(KSpacing.s8),
+            child: SizedBox(
+              width: 180,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _image(),
+                  _title(),
+                  _instructorName(),
+                  _ratingDetails(),
+                  _price(),
+                  generateRandomBool() ? _tag() : const SizedBox()
+                ],
+              ),
             ),
           ),
         ),

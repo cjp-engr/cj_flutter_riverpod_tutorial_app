@@ -4,7 +4,7 @@ import 'package:cj_flutter_riverpod_tutorial_app/common/enums/button_type.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/utils/icon_res.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/buttons.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/features/cart/view/widgets/tutorial_details.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/features/mobile/cart/view/widgets/tutorial_details.dart';
 import 'package:flutter/material.dart';
 
 class CartItem extends StatelessWidget {

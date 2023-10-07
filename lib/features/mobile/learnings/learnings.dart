@@ -4,8 +4,8 @@ import 'package:cj_flutter_riverpod_tutorial_app/common/constants/spacing.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/routes/app_routes_names.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/app_bar.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/features/learnings/view/widgets/categories_button.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/features/learnings/view/widgets/tutorial_details.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/features/mobile/learnings/view/widgets/categories_button.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/features/mobile/learnings/view/widgets/tutorial_details.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

@@ -8,4 +8,5 @@ class AppRoutesNames {
   static const String wishlist = '${base}wishlist';
   static const String account = '${base}account';
   static const String cart = '${base}cart';
+  static const String previewCourse = '${base}preview-course';
 }

@@ -2,10 +2,10 @@ import 'package:cj_flutter_riverpod_tutorial_app/common/constants/font_size.dart
 import 'package:cj_flutter_riverpod_tutorial_app/common/constants/spacing.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/app_bar.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/features/account/view/widgets/account_details.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/features/account/view/widgets/buttons.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/features/account/view/widgets/settings_option.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/features/account/view/widgets/settings_title.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/features/mobile/account/view/widgets/account_details.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/features/mobile/account/view/widgets/buttons.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/features/mobile/account/view/widgets/settings_option.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/features/mobile/account/view/widgets/settings_title.dart';
 import 'package:flutter/material.dart';
 
 class AccountPage extends StatelessWidget {
