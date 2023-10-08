@@ -1,30 +1,31 @@
 import 'package:cj_flutter_riverpod_tutorial_app/common/constants/font_size.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/constants/spacing.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/common/routes/app_routes_names.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/app_bar.dart';
 import 'package:cj_flutter_riverpod_tutorial_app/common/widgets/text.dart';
-import 'package:cj_flutter_riverpod_tutorial_app/features/mobile/wishlist/view/widgets/tutorial_details.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/features/mobile/cart/view/widgets/cart_item.dart';
+import 'package:cj_flutter_riverpod_tutorial_app/features/mobile/cart/view/widgets/cart_wishlist.dart';
 import 'package:flutter/material.dart';
 
-class WishListPage extends StatelessWidget {
-  const WishListPage({super.key});
+class CartMobilePage extends StatelessWidget {
+  const CartMobilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return CustomAppBar(
+      leadingPath: AppRoutesNames.feature,
       title: _displayTitle(),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: KSpacing.s8),
-          child: Column(
-            children: [
-              ...List.generate(
-                20,
-                (index) {
-                  return const WishListTutorialDetails();
-                },
-              ),
-            ],
-          ),
+      actions: const [
+        SizedBox(),
+      ],
+      body: const SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CartItem(),
+            SizedBox(height: KSpacing.s8),
+            CartWishlist(),
+          ],
         ),
       ),
     );
@@ -36,7 +37,7 @@ class WishListPage extends StatelessWidget {
       child: SizedBox(
         width: double.infinity,
         child: TutorialText(
-          text: 'Wishlist',
+          text: 'Cart',
           fontWeight: FontWeight.bold,
           fontSize: KFontSize.s16,
           textAlign: TextAlign.start,

@@ -9,14 +9,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-class LoginRegisterPage extends ConsumerStatefulWidget {
-  const LoginRegisterPage({super.key});
+class LoginRegisterMobilePage extends ConsumerStatefulWidget {
+  const LoginRegisterMobilePage({super.key});
 
   @override
-  ConsumerState<LoginRegisterPage> createState() => _LoginRegisterPageState();
+  ConsumerState<LoginRegisterMobilePage> createState() =>
+      _LoginRegisterPageState();
 }
 
-class _LoginRegisterPageState extends ConsumerState<LoginRegisterPage> {
+class _LoginRegisterPageState extends ConsumerState<LoginRegisterMobilePage> {
   @override
   Widget build(BuildContext context) {
     final bool hasAcc = ref.watch(authCheckerProvider).hasAccount;

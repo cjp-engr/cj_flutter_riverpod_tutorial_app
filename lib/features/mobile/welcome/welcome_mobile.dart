@@ -9,8 +9,8 @@ import 'package:cj_flutter_riverpod_tutorial_app/features/mobile/welcome/view/wi
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class WelcomePage extends StatelessWidget {
-  WelcomePage({super.key});
+class WelcomeMobilePage extends StatelessWidget {
+  WelcomeMobilePage({super.key});
 
   final PageController _pageController = PageController();
 

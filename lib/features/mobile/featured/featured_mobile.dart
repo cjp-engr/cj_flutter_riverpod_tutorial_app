@@ -5,8 +5,8 @@ import 'package:cj_flutter_riverpod_tutorial_app/features/mobile/featured/view/w
 import 'package:cj_flutter_riverpod_tutorial_app/features/mobile/featured/view/widgets/welcome.dart';
 import 'package:flutter/material.dart';
 
-class FeaturedPage extends StatelessWidget {
-  const FeaturedPage({super.key});
+class FeaturedMobilePage extends StatelessWidget {
+  const FeaturedMobilePage({super.key});
 
   @override
   Widget build(BuildContext context) {

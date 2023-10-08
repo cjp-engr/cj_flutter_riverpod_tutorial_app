@@ -8,8 +8,8 @@ import 'package:cj_flutter_riverpod_tutorial_app/features/mobile/account/view/wi
 import 'package:cj_flutter_riverpod_tutorial_app/features/mobile/account/view/widgets/settings_title.dart';
 import 'package:flutter/material.dart';
 
-class AccountPage extends StatelessWidget {
-  const AccountPage({super.key});
+class AccountMobilePage extends StatelessWidget {
+  const AccountMobilePage({super.key});
 
   @override
   Widget build(BuildContext context) {

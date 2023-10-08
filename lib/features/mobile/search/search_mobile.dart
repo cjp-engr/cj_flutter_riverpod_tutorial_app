@@ -4,8 +4,8 @@ import 'package:cj_flutter_riverpod_tutorial_app/features/mobile/search/view/wid
 import 'package:cj_flutter_riverpod_tutorial_app/features/mobile/search/view/widgets/top_searches.dart';
 import 'package:flutter/material.dart';
 
-class SearchPage extends StatelessWidget {
-  const SearchPage({super.key});
+class SearchMobilePage extends StatelessWidget {
+  const SearchMobilePage({super.key});
 
   @override
   Widget build(BuildContext context) {

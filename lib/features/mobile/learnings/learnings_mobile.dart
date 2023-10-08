@@ -9,14 +9,14 @@ import 'package:cj_flutter_riverpod_tutorial_app/features/mobile/learnings/view/
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class LearningsPage extends StatefulWidget {
-  const LearningsPage({super.key});
+class LearningsMobilePage extends StatefulWidget {
+  const LearningsMobilePage({super.key});
 
   @override
-  State<LearningsPage> createState() => _LearningsPageState();
+  State<LearningsMobilePage> createState() => _LearningsPageState();
 }
 
-class _LearningsPageState extends State<LearningsPage> {
+class _LearningsPageState extends State<LearningsMobilePage> {
   @override
   Widget build(BuildContext context) {
     return CustomAppBar(
